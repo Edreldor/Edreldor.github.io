@@ -1,3 +1,5 @@
+
+
 html {
     height: 100%;
     width: 100%;
@@ -9,6 +11,7 @@ html {
 * {
     box-sizing: border-box;
 }
+
 
 ul {
     margin: 0;
@@ -83,10 +86,6 @@ body {
                 font-weight: bold;
                 font-size: 1.2rem;
                 /* On prefere du padding sur le <a> plutot que le <li> pour que la zone cliquable soit plus grande, c'est plus confortable pour l'utilisateur */
-                text-shadow: -1px 1px 2px #000,
-                    1px 1px 2px #000,
-                    1px -1px 2px #000,
-                    -1px -1px 2px #000;
             }
 
         .menu__item__left a img {
@@ -119,7 +118,7 @@ body {
     height: 50px;
     background-color: #111111;
     border-radius: 25px;
-    display: none;
+    display: flex;
     flex-direction: column;
 }
 
@@ -349,7 +348,7 @@ body {
 /* ----- MINT SECTION ----- */
 .mint__section {
     width: 90%;
-    display: none;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -1150,8 +1149,8 @@ body {
 
     .team__section__content div div img {
         margin-bottom: 10px;
-        width: 200px;
-        height: 200px;
+        width: 250px;
+        height: 250px;
     }
 
     .team__section__content div div a {
@@ -1191,8 +1190,8 @@ body {
     }
     .team__section__content div div img {
         margin-bottom: 10px;
-        width: 250px;
-        height: 250px;
+        width: 300px;
+        height: 300px;
     }
 }
 
@@ -1211,7 +1210,7 @@ footer {
 .contract {
     margin-top: 10px;
     margin-bottom: 10px;
-    display: none;
+    display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
