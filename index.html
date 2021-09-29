@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta charset="utf-8" />
 
-    <link rel="stylesheet" href="style.css?v=0.36" />
+    <link rel="stylesheet" href="style.css?v=1.0" />
     <link rel="icon" href="content/images/icon_website.webp" />
     <title>FrigginFarm: The Friggin Eggs NFT's</title>
     <meta name="description" content="The FrigginFarm is a collection of 9,999 unique and randomly generated Friggin Eggs NFTs on the Ethereum Blockchain. With this project we also put en emphasis on how to live an healthier life together!" />
@@ -61,8 +61,8 @@
             <img class="egg__image" src="content/images/icon_website.webp" alt="Intro Friggin Egg NFT" />
             <div class="intro__infos">
                 <span class="mint_info_text"  style="font-family: 'Sigmar One', cursive;">Remaining Eggs</span>
-                <span id="remainingEggs_text" class="remaining__eggs">9,999</span>
-                <span style="font-family: 'Sigmar One', cursive;"><a class="mint_info_text" href="" target="_blank">View Marketplace</a></span>
+                <span id="remainingEggs_text" class="remaining__eggs"></span>
+                <span style="font-family: 'Sigmar One', cursive;"><a class="mint_info_text" href="https://opensea.io" target="_blank">View on Opensea</a></span>
             </div>
         </section>
         <section class="mint__section">
@@ -155,7 +155,7 @@
                         <div class="CommunityTreasury">
                             <img src="content/images/community_logo.webp" alt="FrigginFarm community logo" />
                             <h2>Community Treasury</h2>
-                            <p>After sales are over a percentage will be sent to the Community Treasury. NFT holders will be able to vote on how to spend the funds, whether it be purchasing floor priced FrigginEggs for giveaways, producing content, buying merch, donating to an organization or any other initiatives! The choice will be made entirely by the community. </p>
+                            <p>After sales are over a percentage will be sent to the Community Treasury. NFT holders will be able to vote on how to spend the funds, whether it be purchasing floor priced FrigginEggs from the opensea for giveaways, producing content, buying merch, donating to an organization or any other initiatives! The choice will be made entirely by the community. </p>
                         </div>
                     </div>
                 </div>
@@ -224,7 +224,7 @@
                 </div>
                 <div>
                     <h2>Community Raffles</h2>
-                    <span>A Friggin Egg isn't enough for you? Once 25% and 50% of the NFTs have been minted we'll be doing a community Raffle. The more NFTs you own the higher the chance of winning.</span>
+                    <span>A Friggin Egg isn't enough for you? Once 25% and 50% of the NFTs have been minted we'll be doing a community ETH Raffle. The more NFTs you own the higher the chance of winning.</span>
                 </div>
                 <div>
                     <h2>Donation to charity</h2>
@@ -265,7 +265,7 @@
                 </div>
                 <div>
                     <h2>When are Royalties paid?</h2>
-                    <p>We will payout at the end of every month the royalties from the secondary market </p>
+                    <p>We will payout every month once opensea distributes the royalties from the secondary market </p>
                 </div>
                 <div>
                     <h2>I don’t  really Cook, can I still join the FrigginFarm family?</h2>
@@ -292,11 +292,6 @@
                         <a href="https://twitter.com/isinister2" target="_blank">@isinister2</a>
                         <h3>DEVELOPER</h3>
                     </div>
-                    <div class="team4">
-                        <img src="content/images/team4.webp" alt="iSinister" />
-                        <a href="https://twitter.com/team4" target="_blank">@team4</a>
-                        <h3>MARKETING</h3>
-                    </div>
                 </div>
                 <p>Are you in the F&B business looking to collab with us? Send us an Email at frigginfarm@gmail.com</p>
             </div>
@@ -310,11 +305,14 @@
                 <span id="implementationContract"></span>
             </div>
             <ul>
+                <li><a href="https://opensea.io" target="_blank"><img class="footer__logo" src="content/images/openseawhite.webp" alt="Logo Opensea"></a></li>
                 <li><a href="https://discord.gg/M574XkGNmn" target="_blank"><img class="footer__logo" src="content/images/discordwhite.webp" alt="Logo Discord"></a></li>
                 <li><a href="https://twitter.com/FrigginFarm" target="_blank"><img class="footer__logo" src="content/images/twitterwhite.webp" alt="Logo Twitter"></a></li>
             </ul>
         </div>
     </footer>
-
+    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="index.js"></script>
 </body>
 </html>
