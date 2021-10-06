@@ -150,22 +150,44 @@ async function callContractData() {
 async function mintEgg1() {
 	if (eggContract()) {
 		if(saleStarted()) {
-
 			console.log(eggContract());
-			const price = Number(eggPrice());
-			console.log(price);
 
-			const gasAmount = await eggContract().methods.mintEgg().estimateGas({ from: walletAddress(), value: price });
-			console.log("estimated gas", gasAmount);
+			const frigFreeMint = await eggContract().methods.FrigFreeMint.call();
+			const myTokens = await eggContract().methods.tokensOfOwner.call({from: walletAddress()});
+			
+			console.log("Number of available free Eggs : ", frigFreeMint);
+			console.log("My tokens : ", myTokens);
 
-			console.log({ from: walletAddress(), value: price });
+			if(frigFreeMint > 0 && myTokens == new Array(0)) {
 
-			eggContract().methods
-				.mintEgg()
-				.send({ from: walletAddress(), value: price, gas: String(gasAmount) })
-				.on('transactionHash', function (hash) {
-					console.log("transactionHash", hash)
-				});
+				const gasAmount = await eggContract().methods.mintFreeEgg().estimateGas({ from: walletAddress(), value: 0 });
+				console.log("estimated gas", gasAmount);
+
+				console.log({ from: walletAddress(), value: 0 });
+
+				eggContract().methods
+					.mintFreeEgg()
+					.send({ from: walletAddress(), value: 0, gas: String(gasAmount) })
+					.on('transactionHash', function (hash) {
+						console.log("transactionHash", hash)
+						});
+			}
+			else {
+				const price = Number(eggPrice());
+				console.log(price);
+
+				const gasAmount = await eggContract().methods.mintEgg().estimateGas({ from: walletAddress(), value: price });
+				console.log("estimated gas", gasAmount);
+
+				console.log({ from: walletAddress(), value: price });
+
+				eggContract().methods
+					.mintEgg()
+					.send({ from: walletAddress(), value: price, gas: String(gasAmount) })
+					.on('transactionHash', function (hash) {
+						console.log("transactionHash", hash)
+						});
+			}
 		}
 
 		else {
