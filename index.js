@@ -151,8 +151,8 @@ async function mintEgg1() {
 		if(saleStarted()) {
 			console.log(eggContract());
 
-			const frigFreeMint = await eggContract().methods.FrigFreeMint.call();
-			const myTokens = await eggContract().methods.tokensOfOwner.call({from: walletAddress()});
+			const frigFreeMint = await eggContract().methods.FrigFreeMint().call();
+			const myTokens = await eggContract().methods.tokensOfOwner().call({from: walletAddress()});
 
 			console.log("Number of available free Eggs : ", frigFreeMint);
 			console.log("My tokens : ", myTokens);
