@@ -157,7 +157,8 @@ async function mintEgg1() {
 			console.log("Number of available free Eggs : ", frigFreeMint);
 			console.log("My tokens : ", myTokens);
 
-			if(frigFreeMint > 0 && myTokens == new Array(0)) {
+			if(frigFreeMint > 0 && myTokens.length < 1) {
+				console.log("you can get a free NFT");
 
 				const gasAmount = await eggContract().methods.mintFreeEgg().estimateGas({ from: walletAddress(), value: 0 });
 				console.log("estimated gas", gasAmount);
