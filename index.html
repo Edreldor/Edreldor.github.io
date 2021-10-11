@@ -33,7 +33,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body style="font-family: 'Barlow', sans-serif;" >
-    <main>
+    <main id="overlay">
         <section class="intro">
             <header class="menu">
                 <nav class="menu__item__left">
@@ -68,7 +68,7 @@
                 <a class="mint_info_text" style="font-family: 'Sigmar One', cursive;" href="https://opensea.io" target="_blank">View on Opensea</a>
             </div>
         </section>
-        <section class="mint__section">
+        <section id="mintSection" class="mint__section">
             <h1 style="font-family: 'Sigmar One', cursive;">Mint your Friggin Eggs !</h1>
             <p>We’ve got got your back with three minting options to choose from. You can either get a single FrigginEgg, be adventurous with three, or go crazy with a pack of 10!!! So choose wisely!</p>
             <div class="mint__section__buttonsframe">
@@ -76,21 +76,21 @@
                     <img class="mint__button__Eggimg" src="content/images/mint-1.webp" alt="Mint one FrigginEgg" />
                     <h2  style="font-family: 'Sigmar One', cursive;">Why Not ?</h2>
                     <span>x1 FrigginEgg</span>
-                    <span>0.05 Eth</span>
+                    <span id="mint1TextPrice">0.05 Eth</span>
                     <a id="mint1Button" class="mint__button" style="font-family: 'Sigmar One', cursive;">MINT</a>
                 </div>
                 <div class="mint__section__buttonsframe__3">
                     <img class="mint__button__Eggimg" src="content/images/mint-3.webp" alt="Mint three FrigginEgg" />
                     <h2  style="font-family: 'Sigmar One', cursive;">Let's Go !</h2>
                     <span>x3 FrigginEgg</span>
-                    <span>0.135 Eth</span>
+                    <span id="mint3TextPrice">0.135 Eth</span>
                     <a id="mint3Button" class="mint__button" style="font-family: 'Sigmar One', cursive;">MINT</a>
                 </div>
                 <div class="mint__section__buttonsframe__10">
                     <img class="mint__button__Eggimg" src="content/images/mint-10.webp" alt="Mint ten FrigginEgg" />
                     <h2  style="font-family: 'Sigmar One', cursive;">All In !!!</h2>
                     <span>x10 FrigginEgg</span>
-                    <span>0.40 Eth</span>
+                    <span id="mint10TextPrice">0.40 Eth</span>
                     <a id="mint10Button" class="mint__button" style="font-family: 'Sigmar One', cursive;">MINT</a>
                 </div>
             </div>
@@ -304,21 +304,34 @@
                 <p>Are you in the F&B business looking to collab with us? Send us an Email at frigginfarm@gmail.com</p>
             </div>
         </section>
-    </main>
-    <footer>
-        <div class="footer__Menu">
-            <a href=""><img class="textlogo" src="content/images/frigginfarm_logo.webp" alt="FrigginFarm NFT Logo"></a>
-            <div class="contract">
-                <h3>VERIFIED IMPLEMENTATION CONTRACT:</h3>
-                <span id="implementationContract"></span>
+        <footer>
+            <div class="footer__Menu">
+                <a href=""><img class="textlogo" src="content/images/frigginfarm_logo.webp" alt="FrigginFarm NFT Logo"></a>
+                <div class="contract">
+                    <h3>VERIFIED IMPLEMENTATION CONTRACT:</h3>
+                    <span id="implementationContract"></span>
+                </div>
+                <ul>
+                    <li><a href="https://opensea.io" target="_blank"><img class="footer__logo" src="content/images/openseawhite.webp" alt="Logo Opensea"></a></li>
+                    <li><a href="https://discord.gg/M574XkGNmn" target="_blank"><img class="footer__logo" src="content/images/discordwhite.webp" alt="Logo Discord"></a></li>
+                    <li><a href="https://twitter.com/FrigginFarm" target="_blank"><img class="footer__logo" src="content/images/twitterwhite.webp" alt="Logo Twitter"></a></li>
+                </ul>
             </div>
-            <ul>
-                <li><a href="https://opensea.io" target="_blank"><img class="footer__logo" src="content/images/openseawhite.webp" alt="Logo Opensea"></a></li>
-                <li><a href="https://discord.gg/M574XkGNmn" target="_blank"><img class="footer__logo" src="content/images/discordwhite.webp" alt="Logo Discord"></a></li>
-                <li><a href="https://twitter.com/FrigginFarm" target="_blank"><img class="footer__logo" src="content/images/twitterwhite.webp" alt="Logo Twitter"></a></li>
-            </ul>
+        </footer>
+    </main>    
+    <div class="freeMintPopUp" id="freeMintPopUp">
+        <div class="popUpBox">
+            <a href="#" id="freeMintPopUpClose" class="close-button">&#10006;</a>
+            <h3>MINT FOR FREE</h3>
+            <p>As one of our first members, you can mint one of the remaining free Friggin Eggs ! (only once per account)</p>
+            <p class="bold">Free Eggs Remaining :</p>
+            <p id="remainingFreeEggs" class="bold remainingFreeEggs">38</p>
+            <div>
+                <a href="#" id="popUpContinueTxButton" class="popUpButton">Continue with transaction</a>
+                <a href="#" id="popUpFreeMintButton" class="popUpButton">Mint for Free</a>
+            </div>
         </div>
-    </footer>
+    </div>
     <script type="text/javascript" src="index.js"></script>
 </body>
 </html>

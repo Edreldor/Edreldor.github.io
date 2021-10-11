@@ -43,6 +43,10 @@ section {
     position:  relative;
 }
 
+.bold {
+    font-weight: bold;
+}
+
 /* ----------------------------------- */
 /* ---------- INTRO SECTION ---------- */
 /* ----------------------------------- */
@@ -153,7 +157,7 @@ section {
     .intro__infos > a {
         color: white;
         box-sizing: content-box;
-        width: 30%;
+        width: 33%;
         text-align: center;
         text-decoration:  none;
     }
@@ -168,6 +172,9 @@ section {
 }
 
 .mint_info_text {
+    line-height: 90%;
+    display: grid;
+    place-items: center;
     font-size: var(--ftsizeMintInfo);
 }
 
@@ -194,7 +201,7 @@ section {
 /* ---------------------------------- */
 .mint__section {
     width: 90%;
-    display: flex;
+    display: none; /* turn to flex to enable */
     flex-direction: column;
     place-items: center;
     margin: 0px auto;
@@ -987,4 +994,129 @@ footer {
 
 .textlogo {
     height: var(--menuLogoHeight);
+}
+
+/* -------- Pop-up FreeMint -------- */
+.freeMintPopUp {
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    display: none; /* turn to flex to enable */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.popUpBox {
+    min-width: 250px;
+    width: 50vw;
+    background-color: whitesmoke;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    box-shadow: 0px 4px 6px 0px rgba(0,0,0,0.1);
+}
+
+.popUpBox > p {
+    width: 90%;
+    margin: 1em auto;
+    font-size: var(--ftsizeTextSection);
+}
+
+.remainingFreeEggs {
+    margin: 0 auto;
+}
+
+
+.popUpBox > div {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+}
+
+.popUpBox > div > a {
+    width: 30%;
+    min-width: 150px;
+    height: 40px;
+    border-radius: 20px;
+    margin: 1em;
+    display: grid;
+    place-items: center;
+    font-size: var(--ftsizeTextSection);
+}
+
+.popUpBox > h3 {
+    font-size: var(--ftsizeSecondaryTitle);
+    width: 100%;
+    background: #FF8566;
+    margin: 0px;
+    padding: .5em;
+    color: #ffffff;
+}
+
+.popUpButton {
+    text-decoration: none;
+    margin 0 auto;
+    background-color: #FF8566;
+    margin-bottom: 33px;
+    color: #ffffff;
+}
+
+.popUpButton:hover {
+    background-color: #7CCF29;
+    box-shadow: 0px 4px 6px 0px rgba(0,0,0,0.1);
+}
+
+.close-button {
+    text-decoration: none;
+    transition: all 0.5s ease;
+    position: absolute;
+    background-color: #FF8566;
+    padding: 1.5px 7px;
+    right: 0;
+    margin-right: -13px;
+    margin-top: -13px;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    color: white;
+    box-shadow: -3px 1px 6px 0px rgba(0,0,0,0.1);
+}
+
+.close-button:hover {
+    background-color: #8B2931;
+    color: #fff;
+}
+
+/* Blur Effect */
+.blur-in {
+    animation: blur 2s forwards;
+}
+
+.blur-out {
+    animation: blur-out 2s forwards;
+}
+
+@keyframes blur {
+    0% {
+        filter: blur(0px);
+    }
+
+    100% {
+        filter: blur(4px);
+    }
+}
+
+@keyframes blur-out {
+    0% {
+        filter: blur(4px);
+    }
+
+    100% {
+        filter: blur(0px);
+    }
 }

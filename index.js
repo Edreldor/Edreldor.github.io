@@ -1,17 +1,31 @@
-const ADDRESS = "0x1e477687F18f5332BD5162aA50414a00070680dc";
+const ADDRESS = "0x8396c29fff213673340f2B511fAB0CAEb0f6F67E";
 const ABI = [{"inputs":[],"stateMutability":"nonpayable","type":"constructor"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"owner","type":"address"},{"indexed":true,"internalType":"address","name":"approved","type":"address"},{"indexed":true,"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"Approval","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"owner","type":"address"},{"indexed":true,"internalType":"address","name":"operator","type":"address"},{"indexed":false,"internalType":"bool","name":"approved","type":"bool"}],"name":"ApprovalForAll","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"previousOwner","type":"address"},{"indexed":true,"internalType":"address","name":"newOwner","type":"address"}],"name":"OwnershipTransferred","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"from","type":"address"},{"indexed":true,"internalType":"address","name":"to","type":"address"},{"indexed":true,"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"Transfer","type":"event"},{"inputs":[],"name":"FRIG_PROVENANCE","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"FrigFreeMint","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"","type":"uint256"}],"name":"FrigNames","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"FrigPrice","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"FrigReserve","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"LICENSE_TEXT","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"MAX_Frig","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"TenFrigPrice","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"ThreeFrigPrice","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"approve","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"owner","type":"address"}],"name":"balanceOf","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"baseURI","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"flipPreSale","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"flipSaleState","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"getApproved","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"owner","type":"address"},{"internalType":"address","name":"operator","type":"address"}],"name":"isApprovedForAll","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"mintEgg","outputs":[],"stateMutability":"payable","type":"function"},{"inputs":[],"name":"mintFreeEgg","outputs":[],"stateMutability":"payable","type":"function"},{"inputs":[],"name":"mintTenEggs","outputs":[],"stateMutability":"payable","type":"function"},{"inputs":[],"name":"mintThreeEggs","outputs":[],"stateMutability":"payable","type":"function"},{"inputs":[],"name":"name","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"owner","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"ownerOf","outputs":[{"internalType":"address","name":"","type":"address"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"preSale","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"renounceOwnership","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"_to","type":"address"},{"internalType":"uint256","name":"_reserveAmount","type":"uint256"}],"name":"reserveFrig","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"from","type":"address"},{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"safeTransferFrom","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"from","type":"address"},{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"tokenId","type":"uint256"},{"internalType":"bytes","name":"_data","type":"bytes"}],"name":"safeTransferFrom","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"saleIsActive","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"operator","type":"address"},{"internalType":"bool","name":"approved","type":"bool"}],"name":"setApprovalForAll","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"string","name":"baseURI","type":"string"}],"name":"setBaseURI","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"bytes4","name":"interfaceId","type":"bytes4"}],"name":"supportsInterface","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"symbol","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"index","type":"uint256"}],"name":"tokenByIndex","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"_id","type":"uint256"}],"name":"tokenLicense","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"owner","type":"address"},{"internalType":"uint256","name":"index","type":"uint256"}],"name":"tokenOfOwnerByIndex","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"tokenURI","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"_owner","type":"address"}],"name":"tokensOfOwner","outputs":[{"internalType":"uint256[]","name":"","type":"uint256[]"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"totalSupply","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"from","type":"address"},{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"tokenId","type":"uint256"}],"name":"transferFrom","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"newOwner","type":"address"}],"name":"transferOwnership","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[],"name":"withdrawAll","outputs":[],"stateMutability":"payable","type":"function"}];
 
 
 const ethereumButton = document.getElementById('enableEthereumButton');
 const ethereumButton_text = document.getElementById('enableEthereumButton_text');
 const showAccount = document.getElementById('showAccount');
+
+const mintSection = document.getElementById("mintSection");
+
 const mint1Button = document.getElementById('mint1Button');
 const mint3Button = document.getElementById('mint3Button');
 const mint10Button = document.getElementById('mint10Button');
+
+const mint1TextPrice = document.getElementById('mint1TextPrice');
+const mint3TextPrice = document.getElementById('mint3TextPrice');
+const mint10TextPrice = document.getElementById('mint10TextPrice');
+
 const footerContract = document.getElementById("implementationContract");
 const remainingEggs_text = document.getElementById("remainingEggs_text");
 
+const freeMintPopUp = document.getElementById("freeMintPopUp");
+const popUpContinueTxButton = document.getElementById("popUpContinueTxButton");
+const popUpFreeMintButton = document.getElementById("popUpFreeMintButton");
+const remainingFreeEggs = document.getElementById("remainingFreeEggs");
+const freeMintPopUpClose = document.getElementById("freeMintPopUpClose");
 
+const overlay = document.getElementById("overlay");
 
 
 // Define the useState fonction to replace React:
@@ -44,8 +58,13 @@ footerContract.innerHTML = ADDRESS;
 
 // keep remaining eggs number up to date
 
-async function updateRemainingEgs(remaining) {
-	remainingEggs_text.innerHTML = remaining;
+async function updatePageInfo(callContractBool) {
+	if (callContractBool) {callContractData();}
+	remainingEggs_text.innerHTML = remainingEggs();
+	remainingFreeEggs.innerHTML = freeRemaining();
+	mint1TextPrice.innerHTML = String(eggPrice()/1000000000000000000)+" Eth";
+	mint3TextPrice.innerHTML = String(eggPrice3()/1000000000000000000)+" Eth";
+	mint10TextPrice.innerHTML = String(eggPrice10()/1000000000000000000)+" Eth";
 }
 
 
@@ -64,6 +83,12 @@ const [eggContract, setEggContract] = useState(null);
 
 const [totalSupply, setTotalSupply] = useState(0);
 
+const [remainingEggs, setRemainingEggs] = useState(0);
+
+const [freeRemaining, setFreeRemaining] = useState(0);
+
+const [frigReserve, setFrigReserve] = useState(0)
+
 const [saleStarted, setSaleStarted] = useState(false);
 
 const [preSale, setpreSale] = useState(false);
@@ -74,7 +99,11 @@ const [eggPrice3, setEggPrice3] = useState(0);
 
 const [eggPrice10, setEggPrice10] = useState(0);
 
-const [maxEggs, setMaxEggs] = useState(9999);
+const [maxEggs, setMaxEggs] = useState(3000);
+
+const [currentTX, setCurrentTX] = useState(null);
+
+
 window.web3 = new Web3(window.ethereum);
 callContractData()
 //updateRemainingEgs("Connect to see");
@@ -101,6 +130,8 @@ async function signIn() {
 				console.error(error);
 			})
 
+		mintSection.style.display = "flex";
+
 	} else {
 		alert("No Ethereum interface injected into browser. Read-only access");
 	}
@@ -111,6 +142,7 @@ async function signIn() {
 async function signOut() {
 	setSignedIn(false);
 	updateButtonDisconnect();
+	mintSection.style.display = "none";
 }
 
 async function callContractData() {
@@ -132,6 +164,7 @@ async function callContractData() {
 
 	const eggPrice = await eggContract.methods.FrigPrice().call();
 	setEggPrice(eggPrice);
+	console.log(eggPrice);
 
 	const eggPrice3 = await eggContract.methods.ThreeFrigPrice().call();
 	setEggPrice3(eggPrice3);
@@ -141,17 +174,97 @@ async function callContractData() {
 
 	const maxEggs = await eggContract.methods.MAX_Frig().call();
 	setMaxEggs(maxEggs);
-	const remaining = maxEggs - totalSupply;
-	updateRemainingEgs(remaining);
 
+	const frigReserve = await eggContract.methods.FrigReserve().call();
+	setFrigReserve(frigReserve);
+
+	const frigFreeMint = await eggContract.methods.FrigFreeMint().call();
+	setFreeRemaining(frigFreeMint);
+
+	const remaining = maxEggs - totalSupply - frigReserve;
+	setRemainingEggs(remaining);
+
+	updatePageInfo(false);
 }
 
 async function mintEgg1() {
+	const price = Number(eggPrice());
+	console.log(price);
+
+	const gasAmount = await eggContract().methods.mintEgg().estimateGas({ from: walletAddress(), value: price });
+	console.log("estimated gas", gasAmount);
+
+	console.log({ from: walletAddress(), value: price });
+
+	eggContract().methods
+		.mintEgg()
+		.send({ from: walletAddress(), value: price, gas: String(gasAmount) })
+		.on('transactionHash', function (hash) {
+			console.log("transactionHash", hash)
+			});
+	updatePageInfo(true);
+
+};
+
+async function mintEgg3() {
+
+	const price = Number(eggPrice3());
+
+	const gasAmount = await eggContract().methods.mintThreeEggs().estimateGas({ from: walletAddress(), value: price });
+	console.log("estimated gas", gasAmount);
+
+	console.log({ from: walletAddress(), value: price });
+
+	eggContract().methods
+		.mintThreeEggs()
+		.send({ from: walletAddress(), value: price, gas: String(gasAmount) })
+		.on('transactionHash', function (hash) {
+			console.log("transactionHash", hash)
+		});
+	updatePageInfo(true);
+
+};
+
+async function mintEgg10() {
+
+	const price = Number(eggPrice10());
+
+	const gasAmount = await eggContract().methods.mintTenEggs().estimateGas({ from: walletAddress(), value: price });
+	console.log("estimated gas", gasAmount);
+
+	console.log({ from: walletAddress(), value: price });
+
+	eggContract().methods
+		.mintTenEggs()
+		.send({ from: walletAddress(), value: price, gas: String(gasAmount) })
+		.on('transactionHash', function (hash) {
+			console.log("transactionHash", hash)
+		});
+	updatePageInfo(true);
+};
+
+async function mintEggFree() {
+	const gasAmount = await eggContract().methods.mintFreeEgg().estimateGas({ from: walletAddress(), value: 0 });
+	console.log("estimated gas", gasAmount);
+
+	console.log({ from: walletAddress(), value: 0 });
+
+	eggContract().methods
+		.mintFreeEgg()
+		.send({ from: walletAddress(), value: 0, gas: String(gasAmount) })
+		.on('transactionHash', function (hash) {
+			console.log("transactionHash", hash)
+		});
+}
+
+async function mint(n) {
 	if (eggContract()) {
 		if(saleStarted()) {
 			console.log(eggContract());
 
 			const frigFreeMint = await eggContract().methods.FrigFreeMint().call();
+			setFreeRemaining(frigFreeMint);
+			remainingFreeEggs.innerHTML = String(frigFreeMint);
 			const myTokens = await eggContract().methods.tokensOfOwner(walletAddress()).call();
 
 			console.log("Number of available free Eggs : ", frigFreeMint);
@@ -159,107 +272,43 @@ async function mintEgg1() {
 
 			if(frigFreeMint > 0 && myTokens.length < 1) {
 				console.log("you can get a free NFT");
-
-				const gasAmount = await eggContract().methods.mintFreeEgg().estimateGas({ from: walletAddress(), value: 0 });
-				console.log("estimated gas", gasAmount);
-
-				console.log({ from: walletAddress(), value: 0 });
-
-				eggContract().methods
-					.mintFreeEgg()
-					.send({ from: walletAddress(), value: 0, gas: String(gasAmount) })
-					.on('transactionHash', function (hash) {
-						console.log("transactionHash", hash)
-						});
+				setCurrentTX(n);
+				openPopUp();
 			}
 			else {
-				const price = Number(eggPrice());
-				console.log(price);
-
-				const gasAmount = await eggContract().methods.mintEgg().estimateGas({ from: walletAddress(), value: price });
-				console.log("estimated gas", gasAmount);
-
-				console.log({ from: walletAddress(), value: price });
-
-				eggContract().methods
-					.mintEgg()
-					.send({ from: walletAddress(), value: price, gas: String(gasAmount) })
-					.on('transactionHash', function (hash) {
-						console.log("transactionHash", hash)
-						});
+				if (n==1) {mintEgg1();}
+				else {
+					if (n==3) {mintEgg3();}
+					else {
+						if (n==10) {mintEgg10();}
+					}
+				}
 			}
 		}
 
 		else {
+			alert("Sales are Off");
 			console.log("Sales are Off");
 		}
 
-	} else {
+	}
+	else {
 		console.log("Wallet not connected");
 	}
 
-};
+}
 
-async function mintEgg3() {
-	if (eggContract()) {
-		if(saleStarted()) {
+function openPopUp() {
+	freeMintPopUp.style.display = "flex";
+	overlay.classList.remove("blur-out");
+	overlay.classList.add("blur-in");
+}
 
-			const price = Number(eggPrice3());
-
-			const gasAmount = await eggContract().methods.mintThreeEggs().estimateGas({ from: walletAddress(), value: price });
-			console.log("estimated gas", gasAmount);
-
-			console.log({ from: walletAddress(), value: price });
-
-			eggContract().methods
-				.mintThreeEggs()
-				.send({ from: walletAddress(), value: price, gas: String(gasAmount) })
-				.on('transactionHash', function (hash) {
-					console.log("transactionHash", hash)
-				});
-		}
-
-		else {
-			console.log("Sales are Off");
-		}
-
-		
-
-	} else {
-		console.log("Wallet not connected");
-	}
-
-};
-
-async function mintEgg10() {
-	if (eggContract()) {
-		if(saleStarted()) {
-
-			const price = Number(eggPrice10());
-
-			const gasAmount = await eggContract().methods.mintTenEggs().estimateGas({ from: walletAddress(), value: price });
-			console.log("estimated gas", gasAmount);
-
-			console.log({ from: walletAddress(), value: price });
-
-			eggContract().methods
-				.mintTenEggs()
-				.send({ from: walletAddress(), value: price, gas: String(gasAmount) })
-				.on('transactionHash', function (hash) {
-					console.log("transactionHash", hash)
-				});
-		}
-
-		else {
-			console.log("Sales are Off");
-		}
-
-	} else {
-		console.log("Wallet not connected");
-	}
-
-};
-
+function closePopUp() {
+	freeMintPopUp.style.display = "none";
+	overlay.classList.remove("blur-in");
+	overlay.classList.add("blur-out");
+}
 
 ethereumButton.addEventListener('click', () => {
 	if (signedIn()) {
@@ -271,7 +320,7 @@ ethereumButton.addEventListener('click', () => {
 
 mint1Button.addEventListener('click', () => {
 	if (signedIn()) {
-		mintEgg1();
+		mint(1);
 	}
 	else {
 		alert("No Wallet Connected");
@@ -280,7 +329,7 @@ mint1Button.addEventListener('click', () => {
 
 mint3Button.addEventListener('click', () => {
 	if (signedIn()) {
-		mintEgg3();
+		mint(3);
 	}
 	else {
 		alert("No Wallet Connected");
@@ -289,9 +338,40 @@ mint3Button.addEventListener('click', () => {
 
 mint10Button.addEventListener('click', () => {
 	if (signedIn()) {
-		mintEgg10();
+		mint(10);
 	}
 	else {
 		alert("No Wallet Connected");
 	}
+});
+
+popUpContinueTxButton.addEventListener('click', () => {
+	if (signedIn()) {
+		if (currentTX()==1) {mintEgg1();}
+				else {
+					if (currentTX()==3) {mintEgg3();}
+					else {
+						if (currentTX()==10) {mintEgg10();}
+					}
+				}
+		closePopUp();
+	}
+	else {
+		alert("No Wallet Connected");
+	}
+});
+
+popUpFreeMintButton.addEventListener('click', () => {
+	if (signedIn()) {
+		mintEggFree();
+		closePopUp();
+	}
+	else {
+		alert("No Wallet Connected");
+	}
+});
+
+freeMintPopUpClose.addEventListener('click', () => {
+	freeMintPopUp.style.display = "none";
+	closePopUp();
 });
