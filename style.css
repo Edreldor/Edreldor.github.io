@@ -872,9 +872,10 @@ section {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: clamp(200px, 20%, 500px);
+    width: clamp(100px, 20%, 500px);
     aspect-ratio: .75;
-    margin: 0px 10px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
     .team__section__content div div img {
