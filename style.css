@@ -382,7 +382,7 @@ section {
     .about__section__content div img {
         display: block;
         margin: auto;
-        height: clamp(300px, 20vw, 600px);
+        height: clamp(300px, 17vw, 600px);
         aspect-ratio: 1;
     }
 
