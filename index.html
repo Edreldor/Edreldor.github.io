@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+    <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
@@ -6,21 +6,21 @@
 
     <link rel="stylesheet" href="style.css?v=1.0" />
     <link rel="icon" href="content/images/icon_website.webp" />
-    <title>FrigginFarm: The Friggin Eggs NFT's</title>
-    <meta name="description" content="The FrigginFarm is a collection of 9,999 unique and randomly generated Friggin Eggs NFTs on the Ethereum Blockchain. With this project we also put en emphasis on how to live an healthier life together!" />
+    <title>FrigginEggs NFT's</title>
+    <meta name="description" content="The FrigginEgg is a collection of 9,999 unique and randomly generated Friggin Eggs NFTs on the Ethereum Blockchain. With this project we also put en emphasis on how to live an healthier life together!" />
     <meta name="robots" content="index, follow" />
 
-    <meta property="og:title" content="FrigginFarm: The Friggin Eggs NFT's" />
-    <meta property="og:description" content="FrigginFarm: The Friggin Eggs NFT's" />
+    <meta property="og:title" content="The FrigginEggs NFT's" />
+    <meta property="og:description" content="The FrigginEggs NFT's" />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="https://i.imgur.com/6mWW3tX.png" />
     <meta property="og:image:width" content="1024" />
     <meta property="og:image:height" content="512" />
 
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="FrigginFarm: The Friggin Eggs NFT's" />
-    <meta name="twitter:description" content="FrigginFarm: The Friggin Eggs NFT's" />
-    <meta name="twitter:site" content="@FrigginFarm" />
+    <meta name="twitter:title" content="The FrigginEggs NFT's" />
+    <meta name="twitter:description" content="The FrigginEggs NFT's" />
+    <meta name="twitter:site" content="@FrigginEggs" />
     <meta property="twitter:image" content="https://i.imgur.com/6mWW3tX.png" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -28,6 +28,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@500;700&family=Sigmar+One&family=ZCOOL+QingKe+HuangYou&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body style="font-family: 'Barlow', sans-serif;" >
     <main>
@@ -36,10 +39,10 @@
                 <nav class="menu__item__left">
                     <a href=""><img class="textLogo" src="content/images/frigginfarm_logo.webp" alt="FrigginFarm NFT Logo"></a>
                     <ul>
-                        <li><a class="animation" href="#rarity">Rarity</a></li>
-                        <li><a class="animation" href="#roadmap">Roadmap</a></li>
-                        <li><a class="animation" href="#faq">FAQ</a></li>
-                        <li><a class="animation" href="#team">Team</a></li>
+                        <li><a href="#rarity">Rarity</a></li>
+                        <li><a href="#roadmap">Roadmap</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#team">Team</a></li>
                     </ul>
                 </nav>
                 <nav class="menu__item__right">
@@ -61,8 +64,8 @@
             <img class="egg__image" src="content/images/icon_website.webp" alt="Intro Friggin Egg NFT" />
             <div class="intro__infos">
                 <span class="mint_info_text"  style="font-family: 'Sigmar One', cursive;">Remaining Eggs</span>
-                <span id="remainingEggs_text" class="remaining__eggs"></span>
-                <span style="font-family: 'Sigmar One', cursive;"><a class="mint_info_text" href="https://opensea.io" target="_blank">View on Opensea</a></span>
+                <span id="remainingEggs_text" class="remaining__eggs">3000</span>
+                <a class="mint_info_text" style="font-family: 'Sigmar One', cursive;" href="https://opensea.io" target="_blank">View on Opensea</a>
             </div>
         </section>
         <section class="mint__section">
@@ -292,6 +295,11 @@
                         <a href="https://twitter.com/isinister2" target="_blank">@isinister2</a>
                         <h3>DEVELOPER</h3>
                     </div>
+                    <div class="secondieme">
+                        <img src="content/images/secondieme.webp" alt="secondieme" />
+                        <a href="https://twitter.com/secondieme" target="_blank">@secondieme</a>
+                        <h3>MARKETING</h3>
+                    </div>
                 </div>
                 <p>Are you in the F&B business looking to collab with us? Send us an Email at frigginfarm@gmail.com</p>
             </div>
@@ -311,8 +319,6 @@
             </ul>
         </div>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script type="text/javascript" src="index.js"></script>
 </body>
 </html>
