@@ -1,29 +1,28 @@
+:root {
+    --ftsizeMenu: clamp(1em, 1.5vw, 3em);
+    --menuLogoHeight: clamp(2em, 3vw, 6em);
+    --menuConnectButtonHeight: clamp(2.5em, 3.5vw, 7.5em);
 
+    --ftsizeTitleSection: clamp(2em, 3vw, 9em);
+    --ftsizeSecondaryTitle: clamp(1.5em, 2vw, 6em);
+    --ftsizeTextSection: clamp(1em, 1vw, 3em);
 
-html {
-    height: 100%;
-    width: 100%;
+    --ftsizeMintInfo: clamp(.7em, 1.2vw, 2em);
+    --ftsizeSmallText:  clamp(.7em, .8vw, 2em);
+}
+
+html, body {
     padding: 0;
     margin: 0;
     scroll-behavior: smooth;
 }
 
+body {
+    background-color:  #FFAD07;
+}
+
 * {
     box-sizing: border-box;
-}
-
-
-ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-}
-
-main {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 100%;
 }
 
 mark {
@@ -31,99 +30,93 @@ mark {
     font-weight: bold;
 }
 
-/* ----- MENU ----- */
-body {
-    background-color: #FFAD07;
-    position: relative;
-    /* Pour que le menu reste en haut de l'écran si tu veux */
-    height: 100%;
-    width: 100%;
+li {
+    list-style: none;
+}
+
+main {
+    display:  flex;
+    flex-direction: column;
+}
+
+section {
+    position:  relative;
+}
+
+/* ----------------------------------- */
+/* ---------- INTRO SECTION ---------- */
+/* ----------------------------------- */
+.intro {
+    background: url(content/images/intro_bckgrnd.webp) no-repeat bottom left;
+    background-size: cover;
+    height:  100vh;
+    display:  flex;
+    flex-direction:  column;
+    place-items:  center;
+}
+
+/* INTRO - MENU */
+.menu,
+.menu__item__left,
+.menu__item__left > ul,
+.menu__item__right,
+.menu__item__right > ul {
+    display:  flex;
+    flex-wrap:  wrap;
+    justify-content:  space-around;
+    align-items:  center;
     padding: 0;
-    margin: 0;
 }
 
 .menu {
-    /* background-color: #77e0ff; */
-    top: 0;
-    left: 0;
-    width: 100%;
-    max-width: 700px;
-    padding: 5px 15px 15px 15px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    /* Espacement max entre chaque élément. Y'a que 2 élements donc ils se retrouvent chacuns d'un coté de l'écran */
+    width:  100%;
+}   
+
+.textLogo {
+    height: var(--menuLogoHeight);
+    margin: .5em 2em .5em 2em;
 }
 
-.menu__item__left {
-    width: 75%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items:center;
+.menu > nav > ul > li {
+    margin: .5em;
 }
 
-    .menu__item__left ul {
-        width: 100%;
-        margin-left: 0px;
-        display: flex; /* Juste histoire de les aligner */
-        justify-content: space-around;
-        flex-wrap: nowrap;
-        align-items: center;
-    }
+.menu > nav > ul > li > a {
+    padding: .2em;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: var(--ftsizeMenu);
+    color: #ffffff;
+}
 
-        .menu__item__left ul li {
-            margin-top: 10px;
-        }
-
-            .menu__item__left ul li a {
-                color: white;
-                text-decoration: none;
-                display: inline-block;
-                vertical-align: middle;
-                padding: 5px;
-                font-weight: bold;
-                font-size: 1.2rem;
-                /* On prefere du padding sur le <a> plutot que le <li> pour que la zone cliquable soit plus grande, c'est plus confortable pour l'utilisateur */
-            }
-
-        .menu__item__left a img {
-            margin: 5px 0px 5px 5px;
-            height: 40px;
-            /* Meme espacement que sur les <a> mais obligé en margin */
-        }
+.menu__item__right > ul {
+    display: none;
+}
 
 .menu__logo {
-    display: none;
-    height: 40px;
-    width: auto;
+    height: var(--menuLogoHeight);
 }
-
-.menu__item__right {
-    width: 75%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+@media only screen and (min-width: 900px) {
+    .menu__item__right > ul {
+        display: flex;
+    }
 }
 
 .connect__button {
     cursor: pointer;
-    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
-    width: 200px;
-    height: 50px;
+    width: calc(var(--menuConnectButtonHeight)*5);
+    height: var(--menuConnectButtonHeight);
     background-color: #111111;
-    border-radius: 25px;
-    display: flex;
-    flex-direction: column;
+    border-radius: var(--menuConnectButtonHeight);
 }
 
 .connect__button h2 {
-    font-size: 1.3rem;
+    font-size: var(--ftsizeMenu);
     color: #FFFFFF;
     text-decoration: none;
     margin: 0px;
@@ -135,223 +128,75 @@ body {
     font-size: .5rem;
 }
 
-@media only screen and (min-width: 1000px) {
-    .menu {
-        /* background-color: #a0a0a0; */
-        top: 0;
-        left: 0;
-        width: 100%;
-        max-width: none;
-        padding: 5px 15px 15px 15px;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: space-between;
-        /* Espacement max entre chaque élément. Y'a que 2 élements donc ils se retrouvent chacuns d'un coté de l'écran */
-    }
-
-    .menu__item__left {
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-    }
-        .menu__item__left ul {
-            justify-content: normal;
-            margin-left: 10px;
-        }
-        .menu__item__left ul li {
-            margin-left: 30px;
-        }
-
-    .menu__item__right {
-        margin-right: 15px;
-        width: auto;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-    }
-
-        .menu__item__right ul {
-            display: flex;
-            flex-direction: row;
-        }
-
-        .menu__item__right ul li {
-            margin-right: 25px;
-        }
-
-        .menu__logo {
-            display: block;
-            margin: 5px;
-        }
-}
-
-.menu__item__left a {
-    transition: 0.2s ease-in-out;
-}
-
-.menu__item__left a:hover {
-    transform: rotate(-5deg);
-}
-
-.menu__item__right ul li a img {
-    transition: .2s ease-in-out;
-}
-
-.menu__item__right ul li a img:hover {
-    transform: rotate(-10deg);
-}
-
-/* ----- INTRO ----- */
-.intro {
-    background: url(content/images/intro_bckgrnd.webp) no-repeat bottom left;
-    background-size: cover;
-    display: flex;
-    flex-direction: column; /* Flex de bas en haut */
-    justify-content: center; /* Centrés verticalement */
-    align-items: center; /* Centrés horizontalement */
+.egg__image {
+    margin-top: 10px;
+    height: max(50vw, 50vh);
+    max-height: min(60vh, 60vw);
 }
 
 .intro__infos {
-    margin-top: 30%;
-    margin-bottom: 10px;
+    position:  absolute;
+    bottom:  5vh;
     background-color: #8B2931;
-    width: 75%;
-    height: 50px;
-    border-radius: 50px;
-    border: 3px solid #FFFFFF;
+    width: 50%;
+    min-width: 270px;
+    height: clamp(2.5em, 3.5vw, 7.5em);
+    border-radius: clamp(2.5em, 3.5vw, 7.5em);
+    border: 5px solid #FFFFFF;
     display: flex;
     justify-content: space-around;
     align-items: center;
-    text-align: center;
-    position: relative;
+    justify-content: center;
 }
 
-    .intro__infos span {
+    .intro__infos > span,
+    .intro__infos > a {
         color: white;
-        /* background-color: rgba(0,0,0,.3); /* gris, aide visuelle */
-        margin:10px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .intro__infos span a {
-        color: white;
-        text-decoration: none;
+        box-sizing: content-box;
+        width: 30%;
+        text-align: center;
+        text-decoration:  none;
     }
 
 .remaining__eggs {
     font-weight: bold;
-    font-size: 1.2rem;
+    font-size: var(--ftsizeMenu);
     line-height: 200%;
-    text-align: center;
-    height: 50px;
-    width: 30%;
-    border: 3px solid #FFFFFF;
+    height: 100%;
+    border: 5px solid #FFFFFF;
     align-items: center
 }
 
 .mint_info_text {
-    font-size: 0.8rem;
+    font-size: var(--ftsizeMintInfo);
 }
 
-@media only screen and (min-width: 600px) {
-    .mint_info_text {
-        font-size: 1rem;
-    }
+/* Menu transitions */
 
-    .remaining__eggs {
-        font-size: 1.5rem;
-        line-height: 170%;
-    }
+.menu__item__left a,
+.menu__item__left ul li a,
+.menu__item__right ul li a {
+    display:  inline-block;
+    transition:  .2s ease-in-out;
 }
 
-.egg__image {
-    width: 200px;
-    height: 200px;
+.menu__item__left a:hover,
+.menu__item__left ul li a:hover {
+    transform: rotate(-5deg);
 }
 
-@media only screen and (min-width: 1000px) {
-    .intro__infos {
-        margin-top: 10%;
-        margin-bottom: 10%;
-        width: 50%;
-    }
-
-    .egg__image {
-        width: 300px;
-        height: 300px;
-    }
+.menu__item__right ul li a:hover {
+    transform: rotate(-10deg);
 }
 
-@media only screen and (min-width: 1440px) {
-    .intro__infos {
-        margin-top: 5%;
-        margin-bottom: 5%;
-        width: 50%;
-        height: 75px;
-    }
-
-    .egg__image {
-        width: 25%;
-        height: 25%;
-    }
-
-    .mint_info_text {
-        font-size: 1.2rem;
-    }
-
-    .remaining__eggs {
-        font-size: 2rem;
-        line-height: 170%;
-        height: 75px;
-    }
-
-    .menu__item__left ul li a {
-        font-size: 1.5rem;
-    }
-
-}
-
-@media only screen and (min-width: 1900px){
-    .menu__logo {
-        height: 60px;
-        width: auto;
-    }
-    .connect__button {
-        width: 300px;
-        height: 70px;
-        border-radius: 35px;
-    }
-
-        .connect__button h2 {
-            font-size: 2rem;
-            color: #FFFFFF;
-            text-decoration: none;
-            margin: 0px;
-        }
-    .menu__item__left ul li a {
-        font-size: 1.7rem;
-        /* On prefere du padding sur le <a> plutot que le <li> pour que la zone cliquable soit plus grande, c'est plus confortable pour l'utilisateur */
-    }
-
-    .menu__item__left a img {
-        height: 60px;
-        /* Meme espacement que sur les <a> mais obligé en margin */
-    }
-}
-
-
-/* ----- MINT SECTION ----- */
+/* ---------------------------------- */
+/* ---------- MINT SECTION ---------- */
+/* ---------------------------------- */
 .mint__section {
     width: 90%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    place-items: center;
     margin: 0px auto;
 }
 
@@ -361,8 +206,14 @@ body {
     }
 }
 
+@media only screen and (min-width: 1440px) {
+    .mint__section {
+        width: 60%;
+    }
+}
+
     .mint__section h1 {
-        font-size: 3rem;
+        font-size: var(--ftsizeTitleSection);
         text-align: center;
         margin-bottom: 0px;
         color: #8B2931;
@@ -371,9 +222,9 @@ body {
     .mint__section p {
         color: #FFFFFF;
         margin-top: 0px;
-        font-size: 1.2rem;
+        font-size: var(--ftsizeTextSection);
         text-align: center;
-        margin-bottom: 2rem;
+        margin-bottom: 2em;
     }
 
     .mint__section__buttonsframe {
@@ -384,38 +235,38 @@ body {
     }
 
         .mint__section__buttonsframe div {
+            position: relative;
             margin: 15px auto;
-            height: 300px;
-            width: 200px;
+            width: clamp(200px, 30%, 400px);
+            aspect-ratio: .75;
             display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: flex-start;
             align-items: center;
             background-color: #FFFFFF;
             border-radius: 40px;
-            border: 3px dashed #8B2931;
         }
 
             .mint__section__buttonsframe div h2 {
-                margin-top: 0px;
-                margin-bottom: 0.5rem;
+                margin: 0px;
                 text-align: center;
                 color: #8B2931;
             }
 
     .mint__button__Eggimg {
-        height: 120px;
-        width: 120px;
+        height: clamp(120px, 50%, 300px);
+        aspect-ratio: 1;
     }
 
     .mint__button {
+        position: absolute;
+        bottom: 5%;
         cursor: pointer;
-        margin-top: 1rem;
         text-decoration: none;
         line-height: 40px;
         text-align: center;
         color: white;
-        width: 150px;
+        width: clamp(150px, 75%, 250px);
         height: 40px;
         background-color: #EF2148;
         border-radius: 20px;
@@ -424,7 +275,7 @@ body {
 .mint__section__buttonsframe__3 {
     background-image: url(content/images/discount10.webp);
     background-repeat: no-repeat;
-    background-size: 100px;
+    background-size: 40%;
     background-position-x: 5px;
     background-position-y: 5px;
 }
@@ -432,31 +283,14 @@ body {
 .mint__section__buttonsframe__10 {
     background-image: url(content/images/discount20.webp);
     background-repeat: no-repeat;
-    background-size: 100px;
+    background-size: 40%;
     background-position-x: 5px;
     background-position-y: 5px;
 }
 
-@media only screen and (min-width: 1900px) {
-    .mint__section {
-        width: 60%;
-    }
-
-    .mint__section__buttonsframe div {
-        width: 250px;
-    }
-
-    .mint__section p {
-        font-size: 1.5rem;
-    }
-
-    .mint__section h1 {
-        font-size: 4rem;
-    }
-}
-
-/* ----- ABOUT ----- */
-
+/* ----------------------------------- */
+/* -------------- ABOUT -------------- */
+/* ----------------------------------- */
 
 .about__section {
     width: 100%;
@@ -466,7 +300,7 @@ body {
     margin-bottom: 50px;
 }
 .about__section__content {
-    padding-top: 5rem;
+    padding-top: 5em;
     width: 90%;
     display: flex;
     flex-direction: column;
@@ -528,7 +362,7 @@ body {
 
     .about__section__text p {
         margin-top: 0px;
-        padding: 2rem;
+        padding: 2em;
         text-align: justify;
         width: 100%;
         height: auto;
@@ -536,7 +370,7 @@ body {
         border: 3px solid #111111;
         background-color: #FFFFFF;
         box-shadow: rgba(10,10,10,1) -8px 8px;
-        font-size: 1rem;
+        font-size: var(--ftsizeTextSection);
     }
 
     .ourCollection div p {
@@ -548,8 +382,8 @@ body {
     .about__section__content div img {
         display: block;
         margin: auto;
-        height: 300px;
-        width: 300px;
+        height: clamp(300px, 17vw, 600px);
+        aspect-ratio: 1;
     }
 
     .about__section__text {
@@ -565,27 +399,9 @@ body {
     }
 }
 
-@media only screen and (min-width: 1900px) {
-    .about__section__text h1 {
-        font-size: 2rem;
-        width: 350px;
-        height: 60px;
-        border-radius: 30px;
-        line-height: 170%;
-    }
-
-    .about__section__text p {
-        font-size: 1.5rem;
-    }
-
-    .about__section__content div img {
-        width: 350px;
-        height: 350px;
-    }
-}
-
-/* ----- WHY OWN AN EGG ----- */
-
+/* ----------------------------------- */
+/* --------- WHY OWN AN EGG ---------- */
+/* ----------------------------------- */
 .why__section {
     width: 100%;
     margin-bottom: 50px;
@@ -613,7 +429,7 @@ body {
 }
 
 .why__section__content h1 {
-    font-size: 3rem;
+    font-size: var(--ftsizeTitleSection);
     text-align: center;
     margin-bottom: 0px;
     color: #8B2931;
@@ -622,9 +438,9 @@ body {
 .why__section__content p {
     margin-top: 0px;
     color: #FFFFFF;
-    font-size: 1.2rem;
+    font-size: var(--ftsizeTextSection);
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 2em;
 }
 
 .KeyPoints__row1, .KeyPoints__row2 {
@@ -697,7 +513,7 @@ body {
     padding: 0px 20px 0px 20px;
     color: #FFFFFF;
     text-align: justify;
-    font-size: 1rem;
+    font-size: var(--ftsizeTextSection);
 }
 
 .CookingClub {
@@ -712,28 +528,9 @@ body {
     background-position: center;
 }
 
-@media only screen and (min-width: 1900px) {
-    .why__section__content h1 {
-        font-size: 3.5rem;
-    }
-
-    .why__section__content p{
-        font-size: 1.5rem;
-    }
-
-    .KeyPoints__row1 div h2, .KeyPoints__row2 div h2 {
-        font-size: 1.5rem;
-    }
-
-    .KeyPoints__row1 div p, .KeyPoints__row2 div p {
-        font-size: 1.3rem;
-    }
-    
-}
-
-
-/* ----- RARITY ----- */
-
+/* ----------------------------------- */
+/* ------------- RARITY -------------- */
+/* ----------------------------------- */
 .rarity__section {
     width: 100%;
     margin-bottom: 50px;
@@ -761,7 +558,7 @@ body {
 }
 
 .rarity__section__content h1 {
-    font-size: 3rem;
+    font-size: var(--ftsizeTitleSection);
     text-align: center;
     margin-bottom: 0px;
     color: #8B2931;
@@ -770,9 +567,9 @@ body {
 .rarity__section__content p {
     margin-top: 0px;
     color: #FFFFFF;
-    font-size: 1.2rem;
+    font-size: var(--ftsizeTextSection);
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 2em;
 }
 
 .rarity__section__content p mark {
@@ -799,7 +596,7 @@ body {
     margin: 20px 0px 20px 0px;
     padding: 20px;
     height: 100%;
-    font-size: 1rem;
+    font-size: var(--ftsizeTextSection);
     color: #FFFFFF;
     display: flex;
     flex-direction: column;
@@ -827,62 +624,13 @@ body {
     }
 
 .rarity__exemple img {
-    width: 150px;
-    height: 150px;
+    width: clamp(200px, 50%, 400px);
+    aspect-ratio: 1;
 }
 
-@media only screen and (min-width: 650px) {
-    .rarity__exemple img {
-        width: 200px;
-        height: 200px;
-    }
-
-    .rarity__textFrame {
-        font-size: 1.2rem;
-    }
-}
-
-@media only screen and (min-width: 850px) {
-    .rarity__exemple img {
-        width: 300px;
-        height: 300px;
-    }
-
-    .rarity__textFrame {
-        font-size: 1.2rem;
-    }
-}
-@media only screen and (min-width: 1050px) {
-    .rarity__exemple img {
-        width: 350px;
-        height: 350px;
-    }
-
-    .rarity__textFrame {
-        font-size: 1.5rem;
-    }
-}
-
-@media only screen and (min-width: 1900px){
-    .rarity__section__content h1 {
-        font-size: 3.5rem;
-    }
-
-    .rarity__section__content p {
-        font-size: 1.5rem;
-    }
-
-    .rarity__exemple img {
-        width: 500px;
-        height: 500px;
-    }
-    .rarity__textFrame {
-        font-size: 2rem;
-    }
-}
-
-
-/* ----- ROADMAP ----- */
+/* ----------------------------------- */
+/* ------------- ROADMAP ------------- */
+/* ----------------------------------- */
 .roadmap__section {
     width: 100%;
     margin-bottom: 0px;
@@ -933,7 +681,7 @@ body {
 .roadmap__section h1 {
     margin-bottom: 0px;
     text-align: center;
-    font-size: 3rem;
+    font-size: var(--ftsizeTitleSection);
     color: #FFFFFF;
     transform: translateY(50%);
 
@@ -950,33 +698,22 @@ body {
     color: #FFFFFF;
     margin-bottom: 10px;
     font-weight: bold;
-    font-size: 2rem;
+    font-size: var(--ftsizeSecondaryTitle);
 }
 
 .roadmap__section__content div span {
     color: #FFFFFF;
-    font-size: 1.1rem;
+    font-size: var(--ftsizeTextSection);
     text-align: justify;
 }
 
-@media only screen and (min-width: 1900px){
-    .roadmap__section h1 {
-        font-size: 3.5rem;
-    }
-    .roadmap__section__content div h2 {
-        font-size: 2.5rem;
-    }
-    .roadmap__section__content div span {
-        font-size: 1.5rem;
-    }
-}
-
-
-/* ----- GALLERY ----- */
+/* ----------------------------------- */
+/* ------------- GALLERY ------------- */
+/* ----------------------------------- */
 .gallery__section {
     position: relative;
     width: 100%;
-    height: 600px;
+    height: clamp(300px, 50vw, 600px);
 }
 
 
@@ -1011,8 +748,9 @@ body {
     }
 }
 
-/* ----- FAQ ----- */
-
+/* ----------------------------------- */
+/* --------------- FAQ --------------- */
+/* ----------------------------------- */
 .faq__section:before {
     content: "";
     position: absolute;
@@ -1059,7 +797,7 @@ body {
     margin-bottom: 0px;
     width: 90%;
     text-align: left;
-    font-size: 3rem;
+    font-size: var(--ftsizeTitleSection);
     color: #8B2931;
 }
 
@@ -1076,29 +814,18 @@ body {
     color: #111111;
     margin-bottom: 0px;
     font-weight: bold;
-    font-size: 1.2rem;
+    font-size: var(--ftsizeTextSection);
 }
 
 .faq__section__content p {
     margin-top: 5px;
     color: #111111;
-    font-size: 1.1rem;
+    font-size: var(--ftsizeTextSection);
 }
 
-@media only screen and (min-width: 1900px) {
-    .faq__section__content h1 {
-        font-size: 3.5rem;
-    }
-    .faq__section__content h2 {
-        font-size: 1.7rem;
-    }
-    .faq__section__content p {
-        font-size: 1.5rem;
-    }
-}
-
-
-/* ----- TEAM ----- */
+/* ----------------------------------- */
+/* -------------- TEAM --------------- */
+/* ----------------------------------- */
 .team__section {
     width: 100%;
     margin-bottom: 50px;
@@ -1127,7 +854,7 @@ body {
 
 .team__section__content h1 {
     text-align: center;
-    font-size: 3rem;
+    font-size: var(--ftsizeTitleSection);
     color: #FFFFFF;
     text-shadow: 4px 4px 1px #111111;
 }
@@ -1137,27 +864,29 @@ body {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
+    width: 100%;
 }
 
 .team__section__content div div {
-    margin: 15px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    width: clamp(200px, 20%, 500px);
+    aspect-ratio: .75;
 }
 
     .team__section__content div div img {
         margin-bottom: 10px;
-        width: 250px;
-        height: 250px;
+        border-radius: 50%;
+        height: clamp(100px, 60%, 500px);
     }
 
     .team__section__content div div a {
         padding: 5px;
         text-decoration: none;
         margin-bottom: 0px;
-        font-size: 1.1rem;
+        font-size: var(--ftsizeTextSection);
         color: #FFFFFF;
     }
 
@@ -1165,38 +894,19 @@ body {
         margin-top: 5px;
         margin-bottom: 0px;
         font-weight: bold;
-        font-size: 1.2rem;
+        font-size: var(--ftsizeTextSection);
         color: #8B2931;
     }
 .team__section__content p {
     margin-top: 40px;
-    font-size: 1.1rem;
+    font-size: var(--ftsizeTextSection);
     color: #FFFFFF;
     text-align:center;
 }
 
-@media only screen and (min-width: 1900px) {
-    .team__section__content h1 {
-        font-size: 3.5rem;
-    }
-    .team__section__content div div a {
-        font-size: 1.5rem;
-    }
-    .team__section__content div div h3 {
-        font-size: 1.7rem;
-    }
-    .team__section__content p {
-        font-size: 1.5rem;
-    }
-    .team__section__content div div img {
-        margin-bottom: 10px;
-        width: 300px;
-        height: 300px;
-    }
-}
-
-
-/* ----- FOOTER ----- */
+/* ----------------------------------- */
+/* ------------- FOOTER -------------- */
+/* ----------------------------------- */
 footer {
     width: 100%;
     display: flex;
@@ -1220,12 +930,12 @@ footer {
 .contract h3 {
     margin-right: 5px;
     font-weight: bold;
-    font-size: .8rem;
+    font-size: var(--ftsizeSmallText);
     color: #FFFFFF;
 }
 
 .contract span {
-    font-size: .8rem;
+    font-size: var(--ftsizeSmallText);
     color: #FFFFFF;
 }
 
@@ -1255,9 +965,12 @@ footer {
 }
 
 .footer__Menu ul {
+    padding: 0;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 
     .footer__Menu ul li {
@@ -1266,27 +979,9 @@ footer {
     }
 
 .footer__logo {
-    height: 40px;
-    width: auto;
+    height: var(--menuLogoHeight);
 }
 
 .textlogo {
-    height: 40px;
-}
-
-@media only screen and (min-width: 1900px) {
-    .contract h3 {
-        font-size: 1.3rem;
-    }
-    .contract span {
-        font-size: 1.2rem;
-    }
-
-    .footer__logo {
-        height: 60px;
-        width: auto;
-    }
-    .textlogo {
-        height: 60px;
-    }
+    height: var(--menuLogoHeight);
 }
