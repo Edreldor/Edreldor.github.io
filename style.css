@@ -876,6 +876,7 @@ section {
     aspect-ratio: .75;
     margin-left: 10px;
     margin-right: 10px;
+    position: relative;
 }
 
     .team__section__content div div img {
