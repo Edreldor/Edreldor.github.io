@@ -882,7 +882,7 @@ section {
     .team__section__content div div img {
         margin-bottom: 10px;
         border-radius: 50%;
-        height: clamp(100px, 15vw, 500px);
+        height: clamp(100px, 60%, 500px);
     }
 
     .team__section__content div div a {
