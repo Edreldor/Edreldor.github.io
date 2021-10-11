@@ -874,6 +874,7 @@ section {
     align-items: center;
     width: clamp(200px, 20%, 500px);
     aspect-ratio: .75;
+    margin: 0px 10px;
 }
 
     .team__section__content div div img {
