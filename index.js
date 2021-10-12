@@ -26,7 +26,16 @@ const remainingFreeEggs = document.getElementById("remainingFreeEggs");
 const freeMintPopUpClose = document.getElementById("freeMintPopUpClose");
 
 const overlay = document.getElementById("overlay");
+const mainContent = document.getElementById("main");
 
+const form = document.getElementById('form');
+const passwordPopUp = document.getElementById("passwordPopUp");
+const passwordPopUpClose = document.getElementById("passwordPopUpClose");
+const enterPassword = document.getElementById("enterPassword");
+const submitPassword = document.getElementById('submitPassword');
+const incorrectPassword = document.getElementById('incorrectPassword');
+
+const presalePassword = "ax78ebn90";
 
 // Define the useState fonction to replace React:
 
@@ -90,7 +99,7 @@ const [frigReserve, setFrigReserve] = useState(0)
 
 const [saleStarted, setSaleStarted] = useState(false);
 
-const [preSale, setpreSale] = useState(false);
+const [preSale, setpreSale] = useState(true);
 
 const [eggPrice, setEggPrice] = useState(0);
 
@@ -164,7 +173,6 @@ async function callContractData() {
 
 	const eggPrice = await eggContract.methods.FrigPrice().call();
 	setEggPrice(eggPrice);
-	console.log(eggPrice);
 
 	const eggPrice3 = await eggContract.methods.ThreeFrigPrice().call();
 	setEggPrice3(eggPrice3);
@@ -273,7 +281,7 @@ async function mint(n) {
 			if(frigFreeMint > 0 && myTokens.length < 1) {
 				console.log("you can get a free NFT");
 				setCurrentTX(n);
-				openPopUp();
+				openPopUp(freeMintPopUp);
 			}
 			else {
 				if (n==1) {mintEgg1();}
@@ -298,23 +306,51 @@ async function mint(n) {
 
 }
 
-function openPopUp() {
-	freeMintPopUp.style.display = "flex";
-	overlay.classList.remove("blur-out");
-	overlay.classList.add("blur-in");
+function logSubmit(event) {
+	console.log(enterPassword.value);
+	if (enterPassword.value == presalePassword) {
+		signIn();
+		closePopUp(passwordPopUp);
+		incorrectPassword.innerHTML = "";
+		enterPassword.value = "";
+	}
+	else {
+		incorrectPassword.innerHTML = "Incorrect password";
+	}
+	event.preventDefault();
 }
 
-function closePopUp() {
-	freeMintPopUp.style.display = "none";
-	overlay.classList.remove("blur-in");
-	overlay.classList.add("blur-out");
+function openPopUp(target) {
+	overlay.style.display = "block";
+	target.style.display = "flex";
+	mainContent.classList.remove("blur-out");
+	mainContent.classList.add("blur-in");
+}
+
+function closePopUp(target) {
+	overlay.style.display = "none";
+	target.style.display = "none";
+	incorrectPassword.innerHTML = "";
+	enterPassword.value = "";
+	mainContent.classList.remove("blur-in");
+	mainContent.classList.add("blur-out");
 }
 
 ethereumButton.addEventListener('click', () => {
 	if (signedIn()) {
 		signOut();
 	} else {
-		signIn();
+		if (saleStarted()) {
+			if (preSale()) {
+				openPopUp(passwordPopUp);
+			}
+			else {
+				signIn()
+			}
+		}
+		else {
+			alert("Sales haven't started yet");
+		}
 	}
 });
 
@@ -354,7 +390,7 @@ popUpContinueTxButton.addEventListener('click', () => {
 						if (currentTX()==10) {mintEgg10();}
 					}
 				}
-		closePopUp();
+		closePopUp(freeMintPopUp);
 	}
 	else {
 		alert("No Wallet Connected");
@@ -364,7 +400,7 @@ popUpContinueTxButton.addEventListener('click', () => {
 popUpFreeMintButton.addEventListener('click', () => {
 	if (signedIn()) {
 		mintEggFree();
-		closePopUp();
+		closePopUp(freeMintPopUp);
 	}
 	else {
 		alert("No Wallet Connected");
@@ -372,6 +408,16 @@ popUpFreeMintButton.addEventListener('click', () => {
 });
 
 freeMintPopUpClose.addEventListener('click', () => {
-	freeMintPopUp.style.display = "none";
-	closePopUp();
+	closePopUp(freeMintPopUp);
 });
+
+passwordPopUpClose.addEventListener('click', () => {
+	closePopUp(passwordPopUp);
+})
+
+overlay.addEventListener('click', ({target}) => {
+	closePopUp(freeMintPopUp);
+	closePopUp(passwordPopUp);
+})
+
+form.addEventListener('submit', logSubmit);

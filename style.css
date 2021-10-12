@@ -997,12 +997,22 @@ footer {
 }
 
 /* -------- Pop-up FreeMint -------- */
-.freeMintPopUp {
-    z-index: 1;
+.overlay {
+    display: none;
     position: fixed;
     top: 0;
-    height: 100vh;
-    width: 100vw;
+    zindex: 1;
+    width: 100%;
+    height: 100%;
+}
+
+.freeMintPopUp,
+.passwordPopUp {
+    z-index: 10;
+    position: fixed;
+    top: 25vh;
+    left: 50vw;
+    transform: translateX(-50%);
     display: none; /* turn to flex to enable */
     flex-direction: column;
     justify-content: center;
@@ -1018,6 +1028,10 @@ footer {
     margin-right: auto;
     position: relative;
     box-shadow: 0px 4px 6px 0px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .popUpBox > p {
@@ -1048,6 +1062,7 @@ footer {
     display: grid;
     place-items: center;
     font-size: var(--ftsizeTextSection);
+    line-height: 90%;
 }
 
 .popUpBox > h3 {
@@ -1059,15 +1074,53 @@ footer {
     color: #ffffff;
 }
 
+.popUpBox > form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.enterPassword {
+    font-size: var(--ftsizeTextSection);
+    width: 75%;
+    min-width: 150px;
+    height: 30px;
+    border-radius: 15px;
+    border: 2px solid #FF8566;
+    background: #ffffff;    
+}
+
+.incorrectPassword {
+    color: #FF8566;
+}
+
+.submitPassword {
+    width: 30%;
+    min-width: 150px;
+    height: 40px;
+    border-radius: 20px;
+    border: 0px solid #FF8566;
+    margin: 1em;
+    display: grid;
+    place-items: center;
+    font-size: var(--ftsizeTextSection);
+    line-height: 90%;
+    text-decoration: none;
+    background: #FF8566;
+    color: #ffffff;
+}
+
 .popUpButton {
     text-decoration: none;
-    margin 0 auto;
     background-color: #FF8566;
     margin-bottom: 33px;
     color: #ffffff;
 }
 
-.popUpButton:hover {
+.popUpButton:hover,
+.submitPassword:hover {
     background-color: #7CCF29;
     box-shadow: 0px 4px 6px 0px rgba(0,0,0,0.1);
 }
@@ -1079,6 +1132,7 @@ footer {
     background-color: #FF8566;
     padding: 1.5px 7px;
     right: 0;
+    top: 0;
     margin-right: -13px;
     margin-top: -13px;
     border-radius: 50%;

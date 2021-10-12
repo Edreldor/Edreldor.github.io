@@ -33,7 +33,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body style="font-family: 'Barlow', sans-serif;" >
-    <main id="overlay">
+    <main id="main">
         <section class="intro">
             <header class="menu">
                 <nav class="menu__item__left">
@@ -318,7 +318,8 @@
                 </ul>
             </div>
         </footer>
-    </main>    
+    </main>
+    <div id="overlay" class="overlay"></div>    
     <div class="freeMintPopUp" id="freeMintPopUp">
         <div class="popUpBox">
             <a href="#" id="freeMintPopUpClose" class="close-button">&#10006;</a>
@@ -330,6 +331,19 @@
                 <a href="#" id="popUpContinueTxButton" class="popUpButton">Continue with transaction</a>
                 <a href="#" id="popUpFreeMintButton" class="popUpButton">Mint for Free</a>
             </div>
+        </div>
+    </div>
+    <div class="passwordPopUp" id="passwordPopUp">
+        <div class="popUpBox">
+            <a href="#" id="passwordPopUpClose" class="close-button">&#10006;</a>
+            <h3>ENTER PASSWORD</h3>
+            <p>Enter the password to access our pre-Sales
+            </p>
+            <p id="incorrectPassword" class="incorrectPassword"></p>
+            <form id="form">
+                <input id="enterPassword" class="enterPassword" type="password" name="preSale password">
+                <input class="submitPassword" type="submit" name="submit button">
+            </form>            
         </div>
     </div>
     <script type="text/javascript" src="index.js"></script>
