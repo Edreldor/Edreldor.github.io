@@ -270,6 +270,15 @@ async function mintEggFree() {
 
 async function mint(n) {
 	if (eggContract()) {
+		openPopUp(loading);
+			try {
+				await callContractData();
+			}
+			catch(err) {
+				closePopUp(loading);
+				alert("Be sure to connect to Mainnet");
+				return;	
+			}
 		if(saleStarted()) {
 			console.log(eggContract());
 
