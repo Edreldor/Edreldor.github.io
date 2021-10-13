@@ -349,18 +349,17 @@ function closeLoading() {
 
 
 ethereumButton.addEventListener('click', async () => {
-	openPopUp(loading);
-	try {
-		await callContractData();
-	}
-	catch(err) {
-		closePopUp(loading);
-		alert("Be sure to connect to Mainnet");		
-	}
 	if (signedIn()) {
 		signOut();
-		closePopUp(loading);
 	} else {
+		openPopUp(loading);
+			try {
+				await callContractData();
+			}
+			catch(err) {
+				closePopUp(loading);
+				alert("Be sure to connect to Mainnet");		
+			}
 		if (saleStarted()) {
 			if (preSale()) {
 				openPopUp(passwordPopUp);
