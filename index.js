@@ -451,6 +451,7 @@ passwordPopUpClose.addEventListener('click', () => {
 overlay.addEventListener('click', ({target}) => {
 	closePopUp(freeMintPopUp);
 	closePopUp(passwordPopUp);
+	closePopUp(loading);
 })
 
 form.addEventListener('submit', logSubmit);
