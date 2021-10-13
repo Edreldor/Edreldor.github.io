@@ -294,8 +294,10 @@ async function mint(n) {
 				console.log("you can get a free NFT");
 				setCurrentTX(n);
 				openPopUp(freeMintPopUp);
+				closeLoading();
 			}
 			else {
+				closePopUp(loading);
 				if (n==1) {mintEgg1();}
 				else {
 					if (n==3) {mintEgg3();}
@@ -307,6 +309,7 @@ async function mint(n) {
 		}
 
 		else {
+			closePopUp(loading);
 			alert("Sales are Off");
 			console.log("Sales are Off");
 		}
