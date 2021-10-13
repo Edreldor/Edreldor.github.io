@@ -18,7 +18,7 @@ html, body {
 }
 
 body {
-    background-color:  #FFAD07;
+    background-color:  #ffae6d;
 }
 
 * {
@@ -51,7 +51,7 @@ section {
 /* ---------- INTRO SECTION ---------- */
 /* ----------------------------------- */
 .intro {
-    background: url(content/images/intro_bckgrnd.webp) no-repeat bottom left;
+    background: url(content/images/intro_bckgrnd.webp) no-repeat top center;
     background-size: cover;
     height:  100vh;
     display:  flex;
@@ -78,11 +78,11 @@ section {
 
 .textLogo {
     height: var(--menuLogoHeight);
-    margin: .5em 2em .5em 2em;
+    margin: 0.5em 2em 0em 2em;
 }
 
 .menu > nav > ul > li {
-    margin: .5em;
+    margin: 0em .5em;
 }
 
 .menu > nav > ul > li > a {
@@ -199,6 +199,38 @@ section {
 /* ---------------------------------- */
 /* ---------- MINT SECTION ---------- */
 /* ---------------------------------- */
+
+.accessPreSales {
+    width: 100%;
+    height: 100px;
+    display: none; /* change to grid to display */
+    place-items: center;
+}
+
+.accessPreSales > button {
+    cursor: pointer;
+    text-align: center;
+    line-height: 90%;
+    font-size: calc(var(--ftsizeMenu)*1.1);
+    color: #FFFFFF;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0px;
+    width: calc(var(--menuConnectButtonHeight)*5*1.1);
+    height: calc(var(--menuConnectButtonHeight)*1.1);
+    background-color: #FF8566;
+    border-radius: calc(var(--menuConnectButtonHeight)*1.1);
+    border: 5px solid #ffffff;
+    transition: all .25s ease-in-out;
+}
+
+.accessPreSales > button:hover {
+    background-color: #38D6B9;
+    width: calc(var(--menuConnectButtonHeight)*5*1.1*1.1);
+    height: calc(var(--menuConnectButtonHeight)*1.1*1.1);
+    font-size: calc(var(--ftsizeMenu)*1.1*1.1);
+}
+
 .mint__section {
     width: 90%;
     display: none; /* turn to flex to enable */
@@ -364,7 +396,7 @@ section {
     height: 40px;
     border-radius: 20px;
     border: 3px solid #111111;
-    background-color: #FFA208;
+    background-color: #f49d5f;
 }
 
     .about__section__text p {
@@ -473,7 +505,7 @@ section {
     margin: 10px;
     border: 3px solid #8B2931;
     border-radius: 20px;
-    background-color: #FFA208;
+    background-color: #f49d5f;
     flex: 1 0 0;
 }
 
@@ -839,7 +871,7 @@ section {
 }
 
 .team__section__content {
-    width: 90%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -868,7 +900,6 @@ section {
 
 .team__section__content div {
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
     width: 100%;
@@ -879,17 +910,20 @@ section {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: clamp(100px, 20%, 500px);
     aspect-ratio: .75;
-    margin-left: 10px;
-    margin-right: 10px;
+    width: 25%;
+    min-width: 200px;
+    max-width: 500px;
     position: relative;
+    margin: .5em 0em;
 }
 
     .team__section__content div div img {
         margin-bottom: 10px;
         border-radius: 50%;
-        height: clamp(100px, 60%, 500px);
+        min-width: 100px;
+        max-width: 400px;
+        width: 80%;
     }
 
     .team__section__content div div a {
@@ -1148,11 +1182,11 @@ footer {
 
 /* Blur Effect */
 .blur-in {
-    animation: blur 2s forwards;
+    animation: blur 1s forwards;
 }
 
 .blur-out {
-    animation: blur-out 2s forwards;
+    animation: blur-out 1s forwards;
 }
 
 @keyframes blur {
@@ -1173,4 +1207,64 @@ footer {
     100% {
         filter: blur(0px);
     }
+}
+
+
+/* --------- LOADING SCREEN ---------- */
+
+.loading {
+    z-index: 5;
+    position: fixed;
+    top: 30vh;
+    left: 50vw;
+    transform: translateX(-50%);
+    display: none; /* turn to flex to enable */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 10vw;
+    max-width: 100px;
+    height: 10vw;
+    max-height: 100px;
+}
+
+.dot {
+      width: 25%;
+      aspect-ratio: 1;
+      display: block;
+      position: absolute;
+      bottom: 0;
+      border-radius: 50%;
+      background-color: #E0632D;
+      transform: translateY(-50%);
+      animation: loading-dot 1.2s ease-in-out infinite;
+}
+
+.dot1 {
+    left: 7.5%;
+}
+
+.dot2 {
+    left: 37.5%;
+    animation-delay: 0.2s;
+}
+
+.dot3 {
+    left: 67.5%;
+    animation-delay: 0.4s;
+}
+
+@keyframes loading-dot {
+  0% {
+    background-color: #E0632D;
+    bottom: 0;
+  }
+  50% {
+    background-color: #FFFFEC;
+    bottom: 50%;
+  }
+  100% {
+    background-color: #E0632D;
+    bottom: 0;
+  }
 }

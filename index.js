@@ -35,7 +35,11 @@ const enterPassword = document.getElementById("enterPassword");
 const submitPassword = document.getElementById('submitPassword');
 const incorrectPassword = document.getElementById('incorrectPassword');
 
+const loading = document.getElementById("loading");
+
 const presalePassword = "ax78ebn90";
+
+
 
 // Define the useState fonction to replace React:
 
@@ -99,7 +103,7 @@ const [frigReserve, setFrigReserve] = useState(0)
 
 const [saleStarted, setSaleStarted] = useState(false);
 
-const [preSale, setpreSale] = useState(true);
+const [preSale, setpreSale] = useState(false);
 
 const [eggPrice, setEggPrice] = useState(0);
 
@@ -113,7 +117,6 @@ const [currentTX, setCurrentTX] = useState(null);
 
 
 window.web3 = new Web3(window.ethereum);
-callContractData()
 //updateRemainingEgs("Connect to see");
 
 async function signIn() {
@@ -336,22 +339,44 @@ function closePopUp(target) {
 	mainContent.classList.add("blur-out");
 }
 
-ethereumButton.addEventListener('click', () => {
+function openLoading() {
+	loading.style.display = "flex";
+}
+
+function closeLoading() {
+	loading.style.display = "none";
+}
+
+
+ethereumButton.addEventListener('click', async () => {
+	openPopUp(loading);
+	try {
+		await callContractData();
+	}
+	catch(err) {
+		closePopUp(loading);
+		alert("Be sure to connect to Mainnet");		
+	}
 	if (signedIn()) {
 		signOut();
+		closePopUp(loading);
 	} else {
 		if (saleStarted()) {
 			if (preSale()) {
 				openPopUp(passwordPopUp);
+				closeLoading();
 			}
 			else {
-				signIn()
+				signIn();
+				closePopUp(loading);
 			}
 		}
 		else {
-			alert("Sales haven't started yet");
+			closePopUp(loading);
+			alert("Sales haven't started yet or you're not connected to Mainnet");
 		}
 	}
+	
 });
 
 mint1Button.addEventListener('click', () => {
