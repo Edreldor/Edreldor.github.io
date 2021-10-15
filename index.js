@@ -115,6 +115,8 @@ const [maxEggs, setMaxEggs] = useState(3000);
 
 const [currentTX, setCurrentTX] = useState(null);
 
+const [myTokens, setMyTokens] = useState(0);
+
 
 window.web3 = new Web3(window.ethereum);
 //updateRemainingEgs("Connect to see");
@@ -202,7 +204,21 @@ async function mintEgg1() {
 	const price = Number(eggPrice());
 	console.log(price);
 
-	const gasAmount = await eggContract().methods.mintEgg().estimateGas({ from: walletAddress(), value: price });
+	try {
+		const gasAmount = await eggContract().methods.mintEgg().estimateGas({ from: walletAddress(), value: price });
+	}
+	catch(err) {
+		if (remainingEggs() - freeRemaining() < 1) {
+			alert("No more Eggs available");
+		}
+		else {
+			if (myTokens().length > 14) {
+				alert("You can mint a maximum of 15 Eggs. You are trying to mint 1 but you already have " + String(myTokens().length));
+			}
+			else {alert("An Error occured");}
+		}
+		return ;
+	}
 	console.log("estimated gas", gasAmount);
 
 	console.log({ from: walletAddress(), value: price });
@@ -221,7 +237,21 @@ async function mintEgg3() {
 
 	const price = Number(eggPrice3());
 
-	const gasAmount = await eggContract().methods.mintThreeEggs().estimateGas({ from: walletAddress(), value: price });
+	try {
+		const gasAmount = await eggContract().methods.mintThreeEggs().estimateGas({ from: walletAddress(), value: price });
+	}
+	catch(err) {
+		if (remainingEggs() - freeRemaining() < 1) {
+			alert("No more Eggs available");
+			}
+		else {
+			if (myTokens().length > 12) {
+				alert("You can mint a maximum of 15 Eggs. You are trying to mint 3 but you already have " + String(myTokens().length));
+			}
+			else {alert("An Error occured");}
+		}
+		return ;
+	}
 	console.log("estimated gas", gasAmount);
 
 	console.log({ from: walletAddress(), value: price });
@@ -240,7 +270,21 @@ async function mintEgg10() {
 
 	const price = Number(eggPrice10());
 
-	const gasAmount = await eggContract().methods.mintTenEggs().estimateGas({ from: walletAddress(), value: price });
+	try {
+		const gasAmount = await eggContract().methods.mintTenEggs().estimateGas({ from: walletAddress(), value: price });
+	}
+	catch(err) {
+		if (remainingEggs() - freeRemaining() < 1) {
+			alert("No more Eggs available");
+		}
+		else {
+			if (myTokens().length > 5) {
+				alert("You can mint a maximum of 15 Eggs. You are trying to mint 10 but you already have " + String(myTokens().length));
+			}
+			else {alert("An Error occured");}
+		}
+		return ;
+	}
 	console.log("estimated gas", gasAmount);
 
 	console.log({ from: walletAddress(), value: price });
@@ -285,12 +329,13 @@ async function mint(n) {
 			const frigFreeMint = await eggContract().methods.FrigFreeMint().call();
 			setFreeRemaining(frigFreeMint);
 			remainingFreeEggs.innerHTML = String(frigFreeMint);
-			const myTokens = await eggContract().methods.tokensOfOwner(walletAddress()).call();
+			const myToken = await eggContract().methods.tokensOfOwner(walletAddress()).call();
+			setMyTokens(myToken);
 
-			console.log("Number of available free Eggs : ", frigFreeMint);
-			console.log("My tokens : ", myTokens);
+			console.log("Number of available free Eggs : ", freeRemaining());
+			console.log("My tokens : ", myTokens());
 
-			if(frigFreeMint > 0 && myTokens.length < 1) {
+			if(freeRemaining() > 0 && myTokens().length < 1) {
 				console.log("you can get a free NFT");
 				setCurrentTX(n);
 				openPopUp(freeMintPopUp);
