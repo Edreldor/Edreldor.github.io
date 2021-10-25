@@ -206,7 +206,7 @@ section {
 
 .mint__section {
     width: 90%;
-    display: flex; /* turn to flex to enable */
+    display: none; /* turn to flex to enable */
     flex-direction: column;
     place-items: center;
     margin: 0px auto 20px auto;
@@ -230,6 +230,7 @@ section {
     margin-bottom: 0px;
     color: #8B2931;
 }
+
 
 .remainingEggsInfos {
     width: 50%;
@@ -260,7 +261,8 @@ section {
     height: calc(var(--menuConnectButtonHeight)*2);
 }
 
-.frameFreeMint > button {
+.freeMintButton {
+    display: none;
     cursor: pointer;
     text-align: center;
     line-height: 90%;
@@ -277,8 +279,8 @@ section {
     transition: all .25s ease-in-out;
 }
 
-    .frameFreeMint > button:hover {
-        background-color: #38D6B9;
+    .freeMintButton:hover {
+        background-color: #6dbfff;
         width: calc(var(--menuConnectButtonHeight)*5*1.1*1.1);
         height: calc(var(--menuConnectButtonHeight)*1.1*1.1);
         font-size: calc(var(--ftsizeMenu)*1.1*1.1);
@@ -331,7 +333,7 @@ section {
     }
 
     .mint__button:hover {
-        background-color: #38D6B9;
+        background-color: #6dbfff;
     }
 
 .mint__section__buttonsframe__3 {
