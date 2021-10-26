@@ -256,6 +256,7 @@ async function callContractData(full) {
 // ------------------------------------------------------------
 // ------------------------------------------------------------
 
+// Sign In-----------------------------------------------------
 async function signIn() {
 	if (typeof window.web3 !== 'undefined') {
 		await window.ethereum.enable()
@@ -288,7 +289,9 @@ async function signIn() {
 		alert("No Ethereum interface injected into browser. Read-only access");
 	}
 }
+//-------------------------------------------------------------
 
+// Sign Out----------------------------------------------------
 async function signOut() {
 	setSignedIn(false);
 	updateButtonDisconnect();
@@ -422,12 +425,12 @@ async function mintEggFree() {
 }
 //-------------------------------------------------------------
 
-// ------------------------------------------------------------
+// Free Mint button Function ----------------------------------
 async function freemint() {
 	if (eggContract()) {
 		openPopUp(loading);
 			try {
-				await callContractData();
+				await callContractData(false);
 			}
 			catch(err) {
 				closePopUp(loading);
@@ -437,9 +440,6 @@ async function freemint() {
 		if(saleStarted()) {
 			console.log(eggContract());
 
-			const frigFreeMint = await eggContract().methods.FrigFreeMint().call();
-			setFreeRemaining(frigFreeMint);
-			remainingFreeEggs.innerHTML = String(frigFreeMint);
 			await getMyTokens();
 
 			console.log("Number of available free Eggs : ", freeRemaining());
@@ -473,7 +473,7 @@ async function mint(n) {
 	if (eggContract()) {
 		openPopUp(loading);
 			try {
-				await callContractData();
+				await callContractData(false);
 			}
 			catch(err) {
 				closePopUp(loading);
@@ -483,9 +483,6 @@ async function mint(n) {
 		if(saleStarted()) {
 			console.log(eggContract());
 
-			const frigFreeMint = await eggContract().methods.FrigFreeMint().call();
-			setFreeRemaining(frigFreeMint);
-			remainingFreeEggs.innerHTML = String(frigFreeMint);
 			await getMyTokens();
 
 			console.log("Number of available free Eggs : ", freeRemaining());
@@ -556,7 +553,18 @@ ethereumButton.addEventListener('click', async () => {
 });
 //-------------------------------------------------------------
 
+// BUTTON TO MINT FOR FREE ------------------------------------
+freeMintButton.addEventListener('click', () => {
+	if (signedIn()) {
+		freemint();
+	}
+	else {
+		alert("No Wallet Connected");
+	}
+})
+//-------------------------------------------------------------
 
+// BUTTON TO MINT 1 EGG ---------------------------------------
 mint1Button.addEventListener('click', () => {
 	if (signedIn()) {
 		mint(1);
@@ -565,7 +573,9 @@ mint1Button.addEventListener('click', () => {
 		alert("No Wallet Connected");
     }
 });
+//-------------------------------------------------------------
 
+// BUTTON TO MINT 3 EGGS --------------------------------------
 mint3Button.addEventListener('click', () => {
 	if (signedIn()) {
 		mint(3);
@@ -574,7 +584,9 @@ mint3Button.addEventListener('click', () => {
 		alert("No Wallet Connected");
 	}
 });
+//-------------------------------------------------------------
 
+// BUTTON TO MINT 10 EGGS -------------------------------------
 mint10Button.addEventListener('click', () => {
 	if (signedIn()) {
 		mint(10);
@@ -583,7 +595,9 @@ mint10Button.addEventListener('click', () => {
 		alert("No Wallet Connected");
 	}
 });
+//-------------------------------------------------------------
 
+// Button to continue Tx --------------------------------------
 popUpContinueTxButton.addEventListener('click', () => {
 	if (signedIn()) {
 		if (currentTX()==1) {mintEgg1();}
@@ -599,7 +613,9 @@ popUpContinueTxButton.addEventListener('click', () => {
 		alert("No Wallet Connected");
 	}
 });
+//-------------------------------------------------------------
 
+// Free mint button of the pop-up -----------------------------
 popUpFreeMintButton.addEventListener('click', () => {
 	if (signedIn()) {
 		mintEggFree();
@@ -609,21 +625,19 @@ popUpFreeMintButton.addEventListener('click', () => {
 		alert("No Wallet Connected");
 	}
 });
+//-------------------------------------------------------------
 
+// Close pop up button ----------------------------------------
 freeMintPopUpClose.addEventListener('click', () => {
 	closePopUp(freeMintPopUp);
 });
+//-------------------------------------------------------------
 
+// Close any pop up when clicking outside of it ---------------
+/*
 overlay.addEventListener('click', ({target}) => {
 	closePopUp(freeMintPopUp);
 	closePopUp(loading);
 })
-
-freeMintButton.addEventListener('click', () => {
-	if (signedIn()) {
-		freemint();
-	}
-	else {
-		alert("No Wallet Connected");
-	}
-})
+*/
+//-------------------------------------------------------------

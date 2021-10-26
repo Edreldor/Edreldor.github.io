@@ -1141,14 +1141,6 @@ footer {
 
 
 
-
-
-
-
-
-
-
-
 /* -------- Pop-up FreeMint -------- */
 .overlay {
     display: none;
@@ -1227,6 +1219,7 @@ footer {
 }
 
 .popUpButton {
+    cursor: pointer;
     text-decoration: none;
     background-color: #FF8566;
     margin-bottom: 33px;
@@ -1234,11 +1227,12 @@ footer {
 }
 
 .popUpButton:hover {
-    background-color: #7CCF29;
+    background-color: #6dbfff;
     box-shadow: 0px 4px 6px 0px rgba(0,0,0,0.1);
 }
 
 .close-button {
+    cursor: pointer;
     text-decoration: none;
     transition: all 0.5s ease;
     position: absolute;
