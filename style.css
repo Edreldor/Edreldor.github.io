@@ -548,7 +548,7 @@ section {
 .kitchen__section {
     width: 90%;
     min-width: 280px;
-    min-height: 10vh;
+    min-height: 100vh;
     display: flex; /* turn to flex to enable */
     flex-direction: column;
     place-items: center;
