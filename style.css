@@ -55,7 +55,7 @@ section {
 /* ---------- INTRO SECTION ---------- */
 /* ----------------------------------- */
 .intro {
-    background: url(content/images/intro_bckgrnd.webp) no-repeat top center;
+    background: url(content/images/kitchen-photo.png) no-repeat top center;
     background-size: cover;
     height:  100vh;
     display:  flex;
@@ -78,11 +78,22 @@ section {
 
 .menu {
     width:  100%;
-}   
+}  
+
+.menu__item__left > ul,
+.menu__item__right > ul {
+    margin: 5px 0;
+}
+
+.menu__item__left > a {
+    display: grid;
+    place-items: center;
+    transition:  .2s ease-in-out;
+}
 
 .textLogo {
     height: var(--menuLogoHeight);
-    margin: 0.5em 2em 0em 2em;
+    margin: 0em 2em;
 }
 
 .menu > nav > ul > li {
@@ -104,6 +115,11 @@ section {
 .menu__logo {
     height: var(--menuLogoHeight);
 }
+
+.logo_s {
+    transform: scale(0.8);
+}
+
 @media only screen and (min-width: 1000px) {
     .menu__item__right > ul {
         display: flex;
@@ -149,42 +165,9 @@ section {
     min-width: 270px;
 }
 
-.intro__infos > h1 {
-    color: #ffffff;
-    font-size: var(--ftsizeTitle);
-    text-shadow:
-    -3px -3px 0 #000,
-     0   -3px 0 #000,
-     3px -3px 0 #000,
-     3px  0   0 #000,
-     3px  3px 0 #000,
-     0    3px 0 #000,
-    -3px  3px 0 #000,
-    -3px  0   0 #000;
-    text-align: center;
-    margin: 0;
-}
-
-.intro__infos > h2 {
-    color: #ffffff;
-    font-size: var(--ftsizeSecondaryTitle);
-    text-shadow:
-    -2px -2px 0 #000,
-     0   -2px 0 #000,
-     2px -2px 0 #000,
-     2px  0   0 #000,
-     2px  2px 0 #000,
-     0    2px 0 #000,
-    -2px  2px 0 #000,
-    -2px  0   0 #000;
-    text-align: center;
-    margin: 0;
-}
-
 
 /* Menu transitions */
 
-.menu__item__left a,
 .menu__item__left ul li a,
 .menu__item__right ul li a {
     display:  inline-block;
@@ -352,20 +335,12 @@ section {
         background-color: #6dbfff;
     }
 
-.mint__section__buttonsframe__3 {
-    background-image: url(content/images/discount10.webp);
-    background-repeat: no-repeat;
-    background-size: 40%;
-    background-position-x: 5px;
-    background-position-y: 5px;
-}
-
-.mint__section__buttonsframe__10 {
-    background-image: url(content/images/discount20.webp);
-    background-repeat: no-repeat;
-    background-size: 40%;
-    background-position-x: 5px;
-    background-position-y: 5px;
+.promo {
+    position: absolute;
+    width: 40%;
+    top: 5px;
+    left: 5px;
+    border-radius: 40px 0px;
 }
 
 /* ----------------------------------- */
@@ -921,7 +896,8 @@ section {
 
 
 .roadmap__section > img {
-    width: 100%;
+    width: 80%;
+    min-width: 280px;
     height: auto;
     margin: 25px 0 100px 0;
 }
