@@ -896,14 +896,18 @@ section {
 
 
 .roadmap__section > img {
-    width: 80%;
+    width: 100%;
     min-width: 280px;
     height: auto;
     margin: 25px 0 100px 0;
 }
 
 
-
+@media only screen and (min-width: 1440px) {
+    .roadmap__section > img {
+        width: 80%;
+    }
+}
 
 
 
@@ -917,10 +921,10 @@ section {
     position: absolute;
     top: -1px;
     left: 0px;
-    height: 20px;
+    height: clamp(20px, 2.5vw, 100px);
     width: 100%;
     background-image: url(content/images/triangle1.webp);
-    background-size: auto 20px;
+    background-size: clamp(20px, 2.5vw, 100px);
     background-repeat: repeat-x;
     background-position-x: 0px;
     background-position-y: 0px;
