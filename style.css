@@ -104,7 +104,7 @@ section {
 .menu__logo {
     height: var(--menuLogoHeight);
 }
-@media only screen and (min-width: 900px) {
+@media only screen and (min-width: 1000px) {
     .menu__item__right > ul {
         display: flex;
     }
@@ -133,19 +133,19 @@ section {
 #showAccount {
     margin: 0px;
     color: #FFFFFF;
-    font-size: .5rem;
+    font-size: calc(var(--ftsizeSmallText)*0.8);
 }
 
 .egg__image {
     margin-top: 10px;
-    height: max(50vw, 50vh);
-    max-height: min(60vh, 60vw);
+    height: max(45vw, 45vh);
+    max-height: min(55vh, 55vw);
 }
 
 .mainTitle {
     position: absolute;
     bottom: 5vh;
-    width: 50vw;
+    width: 45vw;
     min-width: 270px;
 }
 
@@ -290,13 +290,13 @@ section {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
 }
 
         .mint__section__buttonsframe div {
             position: relative;
             margin: 15px auto;
-            width: clamp(200px, 30%, 400px);
+            width: clamp(200px, 30%, 1400px);
             aspect-ratio: .75;
             display: flex;
             flex-direction: column;
@@ -310,25 +310,41 @@ section {
                 margin: 0px;
                 text-align: center;
                 color: #8B2931;
+                font-size: var(--ftsizeSecondaryTitle);
+            }
+
+            .mint__section__buttonsframe div span {
+                margin: 0px;
+                text-align: center;
+                color: #000000;
+                font-size: var(--ftsizeTextSection);
             }
 
     .mint__button__Eggimg {
-        height: clamp(120px, 50%, 300px);
+        height: clamp(120px, 55%, 1400px);
         aspect-ratio: 1;
     }
 
+    .mint__section__buttonsframe > div > div {
+        height: 20%;
+        width: 100%;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
     .mint__button {
-        position: absolute;
-        bottom: 5%;
         cursor: pointer;
         text-decoration: none;
-        line-height: 40px;
         text-align: center;
         color: white;
-        width: clamp(150px, 75%, 250px);
-        height: 40px;
+        font-size: var(--ftsizeSecondaryTitle);
+        width: clamp(150px, 75%, 1400px);
+        height: calc(var(--ftsizeSecondaryTitle)*1.25);
         background-color: #EF2148;
-        border-radius: 20px;
+        border-radius: calc(var(--ftsizeSecondaryTitle)*1.25);
         transition: all .25 ease-in-out;
     }
 
@@ -391,9 +407,9 @@ section {
 }
 
 .about__section > img {
-    width: 50%;
-    min-width: 250px;
-    margin: 20px auto;
+    width: 70%;
+    min-width: 270px;
+    margin: 20px auto 40px auto;
 }
 
 .about__section > div {
@@ -408,7 +424,7 @@ section {
     .about__section > div > div {
         position: relative;
         width: 30%;
-        aspect-ratio: 1;
+        aspect-ratio: 1.25;
         min-width: 270px;
         background-color: #fb954a;
         border-radius: 20px;
@@ -417,7 +433,7 @@ section {
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        margin: 10px auto;
+        margin: 10px auto 50px auto;
     }
 
     .about__section > div > div > img {
@@ -431,7 +447,8 @@ section {
         color: #AF3225;
         font-size: var(--ftsizeSecondaryTitle);
         text-align: center;
-        margin-top: 30%;
+        margin-top: 25%;
+        margin-bottom: 0;
     }
 
     .about__section > div > div > p {
@@ -458,7 +475,7 @@ section {
     display: flex; /* turn to flex to enable */
     flex-direction: column;
     place-items: center;
-    margin: 0px auto 20px auto;
+    margin: 0px auto 100px auto;
 }
 
 @media only screen and (min-width: 1440px) {
@@ -470,28 +487,43 @@ section {
 .yolk__section > h1 {
     font-size: var(--ftsizeTitleSection);
     text-align: center;
-    margin-bottom: 0px;
+    margin: 0px auto;
     color: #8B2931;
 }
 
 .yolk__section > div {
+    width: 100%;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
 }
 
-
-
-.yolk__section > div > div {
-    width: 50%;
+.yolk__section > div > .text_div {
+    flex: 1 1 65%;
     min-width: 250px;
+    padding: 0px 50px;
 }
 
-.yolk__section > div > div > h2 {
+.yolk__section > div > .image_div {
+    flex: 1 1 35%;
+    min-width: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.toLeft > div > h2 {
     color: #FEDB2A;
     margin-bottom: 0;
-    font-size: var(--ftsizeSecondaryTitle);
+    font-size: calc(var(--ftsizeSecondaryTitle)*1.1);
+}
+
+.toRight > div > h2 {
+    color: #FEDB2A;
+    margin-bottom: 0;
+    font-size: calc(var(--ftsizeSecondaryTitle)*1.4);
 }
 
 .yolk__section > div > div > p {
@@ -501,30 +533,18 @@ section {
     font-size: var(--ftsizeTextSection);
 }
 
-.imageContainerYolk {
-    display: flex;
-    align-items: center;
-    justify-content: end;
-    padding-right: 20px;
-}
-
 .imageContainerYolk > img {
-    width: 50%;
-    min-width: 250px;
+    width: 65%;
+    min-width: 200px;
     aspect-ratio: 1;
-}
-
-.imageContainerEgg {
-    display: flex;
-    align-items: center;
-    justify-content: start;
-    padding-right: 20px;
+    transform: translateX(20%);
 }
 
 .imageContainerEgg > img {
-    width: 60%;
-    min-width: 275px;
+    width: 70%;
+    min-width: 250px;
     aspect-ratio: 1;
+    transform: translateX(-20%);
 }
 
 
@@ -533,24 +553,27 @@ section {
     text-align: right;
 }
 
-@media only screen and (min-width: 600px) {
-    .toLeft {
-        transform: translateX(-50px);
-    }
 
-    .toRight {
-        transform: translateX(50px);
-    }
+.bold_p {
+    color: #ffffff;
+    font-weight: bold;
 }
 
 /* ----------------------------------- */
 /* ------------- KITCHEN-------------- */
 /* ----------------------------------- */
 
+.kitchen__section_backgrnd {
+    padding: 25px 0;
+    width: 100%;
+    background-color: #8B2931;
+    z-index: -10;
+}
 
 .kitchen__section {
     width: 90%;
     min-width: 280px;
+    min-height: 10vh;
     display: flex; /* turn to flex to enable */
     flex-direction: column;
     place-items: center;
@@ -567,7 +590,7 @@ section {
     font-size: var(--ftsizeTitleSection);
     text-align: center;
     margin-bottom: 0px;
-    color: #8B2931;
+    color: #ffffff;
 }
 
 .kitchen__section > p {
@@ -575,6 +598,14 @@ section {
     text-align: center;
     margin-bottom: 20px;
     color: #ffffff;
+}
+
+.kitchen__section > p > mark {
+    font-size: var(--ftsizeTextSection);
+    text-align: center;
+    margin-bottom: 20px;
+    color: #ffffff;
+    font-weight: bold;
 }
 
 .kitchen__section > div {
@@ -604,7 +635,7 @@ section {
 }
 
 .kitchen__section > div > div > span > h2 {
-    font-size: var(--ftsizeSecondaryTitle);
+    font-size: var(--ftsizeTitleSection);
     color: #ffffff;
 }
 
@@ -675,7 +706,7 @@ section {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin: 50px auto 150px auto;
+    margin: 150px auto 150px auto;
 }
 
 @media only screen and (min-width: 1440px) {
@@ -759,7 +790,7 @@ section {
 }
 
 .rt15 {
-    transform: rotate(15deg);
+    transform: rotate(7.5deg);
     min-width: 280px;
 }
 
@@ -869,16 +900,24 @@ section {
 }
 
 .roadmap__section > div > div > div > h2,
-.roadmap__section > div > div > div > p {
+.roadmap__section > div > div > div > p,
+.roadmap__section > div > div > div > p > strong {
     text-align: center;
     color: #ffae6d;
     font-size: var(--ftsizeTextSection);
+}
+
+.roadmap__section > div > div > div > h2,
+.roadmap__section > div > div > div > p > strong {
+    font-weight: bold;
+}
+
+.roadmap__section > div > div > div > h2,
+.roadmap__section > div > div > div > p {
     margin: 0 25px;
 }
 
-.roadmap__section > div > div > div > h2 {
-    font-weight: bold;
-}
+
 
 
 .roadmap__section > img {
@@ -942,7 +981,7 @@ section {
 .faq__section__content h1 {
     margin-bottom: 0px;
     width: 90%;
-    text-align: left;
+    text-align: center;
     font-size: var(--ftsizeTitleSection);
     color: #8B2931;
 }
@@ -1190,6 +1229,7 @@ footer {
 
 
 .popUpBox > div {
+    width: 100%;
     display: flex;
     flex-wrap: wrap-reverse;
     justify-content: space-around;
@@ -1200,8 +1240,8 @@ footer {
 .popUpBox > div > a {
     width: 30%;
     min-width: 150px;
-    height: 40px;
-    border-radius: 20px;
+    height: calc(var(--ftsizeTextSection)*2);
+    border-radius: calc(var(--ftsizeTextSection)*2);
     margin: 1em;
     display: grid;
     place-items: center;
@@ -1295,10 +1335,8 @@ footer {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 10vw;
-    max-width: 100px;
-    height: 10vw;
-    max-height: 100px;
+    width: min(20vw, 15vh);
+    height: min(20vw, 15vh);
 }
 
 .dot {
