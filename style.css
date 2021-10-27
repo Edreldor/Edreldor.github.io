@@ -610,7 +610,7 @@ section {
 }
 
 .kitchen__section > div > div > span > h2 {
-    font-size: var(--ftsizeTitleSection);
+    font-size: calc(var(--ftsizeTitleSection)*.9);
     color: #ffffff;
 }
 
