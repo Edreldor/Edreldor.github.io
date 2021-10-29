@@ -336,7 +336,7 @@ async function mintEgg1() {
 		.mintEgg()
 		.send({ from: walletAddress(), value: price, gas: String(gasAmount()) })
 		.on('transactionHash', function (hash) {
-			console.log("transactionHash", hash)
+			console.log("transactionHash", hash);
 			});
 };
 //-------------------------------------------------------------
@@ -370,7 +370,7 @@ async function mintEgg3() {
 		.mintThreeEggs()
 		.send({ from: walletAddress(), value: price, gas: String(gasAmount()) })
 		.on('transactionHash', function (hash) {
-			console.log("transactionHash", hash)
+			console.log("transactionHash", hash);
 		});
 };
 //-------------------------------------------------------------
@@ -404,7 +404,7 @@ async function mintEgg10() {
 		.mintTenEggs()
 		.send({ from: walletAddress(), value: price, gas: String(gasAmount()) })
 		.on('transactionHash', function (hash) {
-			console.log("transactionHash", hash)
+			console.log("transactionHash", hash);
 		});
 };
 //-------------------------------------------------------------
@@ -420,7 +420,7 @@ async function mintEggFree() {
 		.mintFreeEgg()
 		.send({ from: walletAddress(), value: 0, gas: String(gasAmount) })
 		.on('transactionHash', function (hash) {
-			console.log("transactionHash", hash)
+			console.log("transactionHash", hash);
 		});
 }
 //-------------------------------------------------------------
@@ -495,7 +495,7 @@ async function mint(n) {
 				closeLoading();
 			}
 			else {
-				
+				freeMintButton.style.display = "none";
 				if (n==1) {mintEgg1();}
 				else {
 					if (n==3) {mintEgg3();}
